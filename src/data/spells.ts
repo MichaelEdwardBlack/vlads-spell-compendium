@@ -105,7 +105,7 @@ export const SPELLS: Spell[] = [
     level: 3,
     school: "Abjuration",
     damageOrCondition: "Negation",
-    area: "Reaction trigger",
+    area: "None",
     range: "60 feet",
     duration: "Instantaneous",
   },
@@ -126,5 +126,14 @@ export const SPELLS: Spell[] = [
     area: "Single target",
     range: "Touch",
     duration: "1 hour",
+  },
+  {
+    name: "Blight",
+    level: 4,
+    school: "Necromancy",
+    damageOrCondition: "Necrotic",
+    area: "Single target",
+    range: "30 feet",
+    duration: "Instantaneous",
   },
 ];

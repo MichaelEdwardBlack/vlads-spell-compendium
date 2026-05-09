@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="Vlad's Spell Compendium preview">
+  <defs>
+    <radialGradient id="violetGlow" cx="72%" cy="18%" r="55%">
+      <stop offset="0%" stop-color="#7c3aed" stop-opacity=".54"/>
+      <stop offset="55%" stop-color="#30164b" stop-opacity=".24"/>
+      <stop offset="100%" stop-color="#09040f" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="tealGlow" cx="16%" cy="20%" r="44%">
+      <stop offset="0%" stop-color="#2dd4bf" stop-opacity=".22"/>
+      <stop offset="100%" stop-color="#09040f" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="sigilLine" x1="340" y1="120" x2="860" y2="510">
+      <stop offset="0%" stop-color="#f1c766"/>
+      <stop offset="52%" stop-color="#c4b5fd"/>
+      <stop offset="100%" stop-color="#2dd4bf"/>
+    </linearGradient>
+    <filter id="softGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <rect width="1200" height="630" fill="#09040f"/>
+  <rect width="1200" height="630" fill="url(#violetGlow)"/>
+  <rect width="1200" height="630" fill="url(#tealGlow)"/>
+  <circle cx="826" cy="315" r="190" fill="none" stroke="#c4b5fd" stroke-opacity=".22" stroke-width="4" stroke-dasharray="4 16"/>
+  <g fill="#f4e7ff" stroke="#f1c766" stroke-width="3">
+    <circle cx="826" cy="125" r="15"/>
+    <circle cx="966" cy="190" r="15"/>
+    <circle cx="1016" cy="338" r="15"/>
+    <circle cx="918" cy="484" r="15"/>
+    <circle cx="754" cy="498" r="15"/>
+    <circle cx="636" cy="382" r="15"/>
+    <circle cx="668" cy="207" r="15"/>
+  </g>
+  <g fill="none" stroke="url(#sigilLine)" stroke-linecap="round" stroke-width="10" filter="url(#softGlow)">
+    <path d="M826 125 Q782 294 1016 338"/>
+    <path d="M668 207 Q824 226 918 484"/>
+    <path d="M636 382 Q802 307 966 190"/>
+    <path d="M754 498 Q838 352 826 125"/>
+  </g>
+  <text x="90" y="250" fill="#f4e7ff" font-family="Cinzel, Georgia, serif" font-size="74" font-weight="700">
+    Vlad's Spell
+  </text>
+  <text x="90" y="335" fill="#f4e7ff" font-family="Cinzel, Georgia, serif" font-size="74" font-weight="700">
+    Compendium
+  </text>
+  <text x="94" y="398" fill="#c4b5fd" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="600">
+    Draw glyphs. Reveal spells. Normalize sigils.
+  </text>
+  <path d="M94 434 H502" stroke="#f1c766" stroke-width="3" stroke-linecap="round" opacity=".72"/>
+</svg>

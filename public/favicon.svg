@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Vlad's Spell Compendium">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="45%" r="70%">
+      <stop offset="0%" stop-color="#30164b"/>
+      <stop offset="68%" stop-color="#160c22"/>
+      <stop offset="100%" stop-color="#09040f"/>
+    </radialGradient>
+    <linearGradient id="line" x1="12" y1="12" x2="52" y2="52">
+      <stop offset="0%" stop-color="#f1c766"/>
+      <stop offset="52%" stop-color="#c4b5fd"/>
+      <stop offset="100%" stop-color="#2dd4bf"/>
+    </linearGradient>
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="1.3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <rect width="64" height="64" rx="14" fill="url(#bg)"/>
+  <circle cx="32" cy="32" r="22" fill="none" stroke="#c4b5fd" stroke-opacity=".28" stroke-width="2" stroke-dasharray="1.6 5"/>
+  <g fill="#f4e7ff" stroke="#f1c766" stroke-width="1.2">
+    <circle cx="32" cy="10" r="3.4"/>
+    <circle cx="48" cy="17" r="3.4"/>
+    <circle cx="54" cy="34" r="3.4"/>
+    <circle cx="43" cy="50" r="3.4"/>
+    <circle cx="24" cy="52" r="3.4"/>
+    <circle cx="10" cy="39" r="3.4"/>
+    <circle cx="14" cy="20" r="3.4"/>
+  </g>
+  <g fill="none" stroke="url(#line)" stroke-linecap="round" stroke-width="3.3" filter="url(#glow)">
+    <path d="M32 10 Q29 29 54 34"/>
+    <path d="M14 20 Q31 22 43 50"/>
+    <path d="M10 39 Q30 31 48 17"/>
+    <path d="M24 52 Q33 35 32 10"/>
+  </g>
+</svg>

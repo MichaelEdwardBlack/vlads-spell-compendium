@@ -1,0 +1,17 @@
+{
+  "name": "Vlad's Spell Compendium",
+  "short_name": "Spell Compendium",
+  "description": "An arcane glyph puzzle for discovering and normalizing spell sigils.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#09040f",
+  "theme_color": "#30164b",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

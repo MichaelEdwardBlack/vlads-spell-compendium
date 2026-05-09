@@ -113,7 +113,7 @@ export function spellToRequiredCanonicalKeys(spell: Spell): Record<string, strin
   return Object.fromEntries(
     ATTRIBUTE_DEFINITIONS.map((attribute) => {
       const value = spell[attribute.id];
-      const bitstring = attribute.keys[value];
+      const bitstring = attribute.keys[String(value)];
 
       if (!bitstring) {
         throw new Error(`Missing spellwriting key for ${attribute.id}: ${value}`);
@@ -127,7 +127,7 @@ export function spellToRequiredCanonicalKeys(spell: Spell): Record<string, strin
 export function spellToRequiredEdges(spell: Spell): Edge[] {
   return ATTRIBUTE_DEFINITIONS.flatMap((attribute) => {
     const value = spell[attribute.id];
-    const bitstring = attribute.keys[value];
+    const bitstring = attribute.keys[String(value)];
 
     if (!bitstring) {
       throw new Error(`Missing spellwriting key for ${attribute.id}: ${value}`);

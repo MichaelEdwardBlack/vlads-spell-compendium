@@ -6,6 +6,15 @@ type SpellResultProps = {
   possibleSpellCount: number;
 };
 
+function formatSpellLevel(level: Spell['level']): string {
+  if (level === 0) {
+    return 'Cantrip';
+  }
+
+  const suffix = level === 1 ? 'st' : level === 2 ? 'nd' : level === 3 ? 'rd' : 'th';
+  return `${level}${suffix} level`;
+}
+
 export function SpellResult({ spell, isRevealing = false, possibleSpellCount }: SpellResultProps) {
   return (
     <section className="min-h-24 text-center" aria-live="polite">
@@ -27,7 +36,7 @@ export function SpellResult({ spell, isRevealing = false, possibleSpellCount }: 
       </h1>
       {spell ? (
         <p className="spell-detail-reveal mt-3 text-sm text-[var(--text-body)]">
-          {spell.level} level {spell.school.toLowerCase()} · {spell.damageOrCondition} · {spell.area}
+          {formatSpellLevel(spell.level)} {spell.school.toLowerCase()} · {spell.damageOrCondition} · {spell.area}
         </p>
       ) : isRevealing ? (
         <p className="mt-3 text-sm text-[var(--text-rune)]">The glyph is aligning into its true form.</p>

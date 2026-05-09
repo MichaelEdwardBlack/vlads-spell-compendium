@@ -1,83 +1,73 @@
-import type { SpellAttribute, SpellwritingAttributeDefinition } from '../types';
+import type { SpellAttribute, SpellAttributeValueByAttribute, SpellwritingAttributeDefinition } from '../types';
 import { generateBinaryNecklaces } from '../utils/necklaces';
+import {
+  SPELL_AREAS,
+  SPELL_DAMAGE_OR_CONDITIONS,
+  SPELL_DURATIONS,
+  SPELL_LEVELS,
+  SPELL_RANGES,
+  SPELL_SCHOOLS,
+} from './spellAttributeValues';
 
 const KEY_LENGTH = 13;
 
 export const SPELLWRITING_NECKLACES = generateBinaryNecklaces(KEY_LENGTH);
 
 type AttributeSeed = {
-  id: SpellAttribute;
-  label: string;
-  skip: number;
-  values: readonly string[];
-};
+  [Attribute in SpellAttribute]: {
+    id: Attribute;
+    label: string;
+    skip: number;
+    values: readonly SpellAttributeValueByAttribute[Attribute][];
+  };
+}[SpellAttribute];
 
 const ATTRIBUTE_SEEDS: readonly AttributeSeed[] = [
   {
     id: 'level',
     label: 'Level',
     skip: 0,
-    values: ['Cantrip', '1st', '2nd', '3rd', '4th', '5th', '6th', '7th', '8th', '9th'],
+    values: SPELL_LEVELS,
   },
   {
     id: 'school',
     label: 'School',
     skip: 1,
-    values: [
-      'Abjuration',
-      'Conjuration',
-      'Divination',
-      'Enchantment',
-      'Evocation',
-      'Illusion',
-      'Necromancy',
-      'Transmutation',
-    ],
+    values: SPELL_SCHOOLS,
   },
   {
     id: 'damageOrCondition',
     label: 'Damage or Condition',
     skip: 2,
-    values: [
-      'Fire',
-      'Force',
-      'Ward',
-      'Healing',
-      'Thunder',
-      'Paralyzed',
-      'Teleportation',
-      'Negation',
-      'Lightning',
-      'Invisible',
-    ],
+    values: SPELL_DAMAGE_OR_CONDITIONS,
   },
   {
     id: 'area',
     label: 'Area',
     skip: 3,
-    values: ['Self', 'Touch', 'Single target', 'Multi-target', 'Sphere', 'Cube', 'Line', 'Reaction trigger'],
+    values: SPELL_AREAS,
   },
   {
     id: 'range',
     label: 'Range',
     skip: 4,
-    values: ['Self', 'Touch', '60 feet', '90 feet', '120 feet', 'Long'],
+    values: SPELL_RANGES,
   },
   {
     id: 'duration',
     label: 'Duration',
     skip: 5,
-    values: ['Instantaneous', '1 round', '1 minute', '1 hour'],
+    values: SPELL_DURATIONS,
   },
 ] as const;
 
-function assignSequentialKeys(values: readonly string[]): Record<string, string> {
+function assignSequentialKeys(values: readonly (string | number)[]): Record<string, string> {
   if (values.length > SPELLWRITING_NECKLACES.length) {
     throw new Error(`Cannot assign ${values.length} values from ${KEY_LENGTH}-bit necklace list.`);
   }
 
   return Object.fromEntries(
-    values.map((value, index) => [value, SPELLWRITING_NECKLACES[index]]),
+    values.map((value, index) => [String(value), SPELLWRITING_NECKLACES[index]]),
   );
 }
 

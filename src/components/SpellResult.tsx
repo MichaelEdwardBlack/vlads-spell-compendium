@@ -6,7 +6,7 @@ type SpellResultProps = {
   possibleSpellCount: number;
 };
 
-function formatSpellLevel(level: Spell['level']): string {
+export function formatSpellLevel(level: Spell['level']): string {
   if (level === 0) {
     return 'Cantrip';
   }

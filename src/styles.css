@@ -87,6 +87,8 @@ button {
 }
 
 .app-shell {
+  position: relative;
+  overflow-x: hidden;
   background: var(--bg-page);
   color: var(--text-body);
 }
@@ -157,6 +159,65 @@ button {
 .arcane-button-danger:hover {
   background: color-mix(in srgb, var(--accent-danger) 18%, var(--bg-panel));
   border-color: color-mix(in srgb, var(--accent-danger) 70%, transparent);
+}
+
+.site-nav {
+  width: min(100%, 28rem);
+  background: color-mix(in srgb, var(--bg-panel) 88%, transparent);
+  border-color: var(--border-soft);
+}
+
+.site-nav-link {
+  background: color-mix(in srgb, var(--bg-node) 56%, transparent);
+  border-color: transparent;
+  color: var(--text-muted);
+  outline-color: var(--accent-gold);
+}
+
+.site-nav-link:hover,
+.site-nav-link-active {
+  background: color-mix(in srgb, var(--bg-node-hover) 80%, transparent);
+  border-color: var(--border-strong);
+  color: var(--text-title);
+}
+
+.gallery-card,
+.attribute-section {
+  background: var(--bg-panel);
+  border-color: var(--border-soft);
+}
+
+.gallery-glyph-frame,
+.key-glyph-frame {
+  background:
+    radial-gradient(circle at 50% 50%, color-mix(in srgb, var(--text-rune) 12%, transparent), transparent 58%),
+    color-mix(in srgb, var(--bg-panel-deep) 82%, transparent);
+  border-color: var(--border-soft);
+}
+
+.key-row {
+  background: color-mix(in srgb, var(--bg-node-hover) 16%, transparent);
+  border-color: var(--border-soft);
+}
+
+.binary-bit {
+  border-color: var(--border-soft);
+}
+
+.binary-bit-on {
+  background: color-mix(in srgb, var(--text-rune) 26%, var(--bg-node));
+  color: var(--text-title);
+}
+
+.binary-bit-off {
+  background: color-mix(in srgb, var(--bg-panel-deep) 70%, transparent);
+  color: var(--text-faint);
+}
+
+.line-chip {
+  background: color-mix(in srgb, var(--bg-node) 62%, transparent);
+  border-color: var(--border-soft);
+  color: var(--text-body);
 }
 
 .debug-panel {

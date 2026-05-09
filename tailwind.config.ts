@@ -5,7 +5,7 @@ export default {
   theme: {
     extend: {
       boxShadow: {
-        glyph: '0 0 24px rgba(246, 213, 138, 0.22)',
+        glyph: 'var(--shadow-glyph)',
       },
       fontFamily: {
         display: ['Cinzel', 'Georgia', 'serif'],

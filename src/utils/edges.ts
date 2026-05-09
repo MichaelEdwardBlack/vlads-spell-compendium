@@ -1,6 +1,6 @@
 import { ATTRIBUTE_DEFINITIONS } from '../data/spellwritingKeys';
 import type { Edge, NormalizedEdge, Spell } from '../types';
-import { canonicalRotation } from './necklaces';
+import { canonicalRotation, canonicalRotationOffset } from './necklaces';
 
 const NODE_COUNT = 13;
 const EMPTY_BITSTRING = '0'.repeat(NODE_COUNT);
@@ -54,6 +54,10 @@ export function edgesToCanonicalBitstringForSkip(
   edges: Iterable<NormalizedEdge>,
   skip: number,
 ): string {
+  return canonicalRotation(edgesToBitstringForSkip(edges, skip));
+}
+
+function edgesToBitstringForSkip(edges: Iterable<NormalizedEdge>, skip: number): string {
   const bits = Array.from(EMPTY_BITSTRING);
 
   for (const edge of edges) {
@@ -64,7 +68,45 @@ export function edgesToCanonicalBitstringForSkip(
     }
   }
 
-  return canonicalRotation(bits.join(''));
+  return bits.join('');
+}
+
+export function getNormalizationRotationStepsByEdge(edges: Iterable<NormalizedEdge>): Record<NormalizedEdge, number> {
+  const edgeList = [...edges];
+  const stepsBySkip = new Map<number, number>();
+  const stepsByEdge: Partial<Record<NormalizedEdge, number>> = {};
+
+  for (const edge of edgeList) {
+    const { skip } = edgeToSkipStart(edge);
+
+    if (!stepsBySkip.has(skip)) {
+      const offset = canonicalRotationOffset(edgesToBitstringForSkip(edgeList, skip));
+      stepsBySkip.set(skip, getShortestSignedRotationSteps(-offset));
+    }
+
+    stepsByEdge[edge] = stepsBySkip.get(skip) ?? 0;
+  }
+
+  return stepsByEdge as Record<NormalizedEdge, number>;
+}
+
+function getShortestSignedRotationSteps(steps: number): number {
+  const normalizedSteps = ((steps % NODE_COUNT) + NODE_COUNT) % NODE_COUNT;
+
+  return normalizedSteps > NODE_COUNT / 2 ? normalizedSteps - NODE_COUNT : normalizedSteps;
+}
+
+export function normalizeDrawnEdges(edges: Iterable<NormalizedEdge>): NormalizedEdge[] {
+  const edgeList = [...edges];
+  const skips = new Set<number>();
+
+  for (const edge of edgeList) {
+    skips.add(edgeToSkipStart(edge).skip);
+  }
+
+  return uniqueNormalizedEdges(
+    Array.from(skips).flatMap((skip) => bitstringToEdges(edgesToCanonicalBitstringForSkip(edgeList, skip), skip)),
+  );
 }
 
 export function spellToRequiredCanonicalKeys(spell: Spell): Record<string, string> {

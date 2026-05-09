@@ -5,9 +5,76 @@
 @tailwind utilities;
 
 :root {
-  color-scheme: dark;
+  color-scheme: light dark;
   font-family: Inter, ui-sans-serif, system-ui, sans-serif;
-  background: #080705;
+  background: var(--bg-root);
+  --bg-root: #f5efff;
+  --bg-page: #fbf7ef;
+  --bg-panel: rgba(253, 249, 241, 0.92);
+  --bg-panel-deep: rgba(243, 233, 255, 0.82);
+  --bg-node: #fffaf1;
+  --bg-node-hover: #f2e4ff;
+  --bg-node-selected: #6d28d9;
+  --bg-node-disabled: rgba(226, 218, 235, 0.78);
+  --border-soft: rgba(107, 70, 193, 0.22);
+  --border-strong: rgba(109, 40, 217, 0.52);
+  --text-title: #3b176f;
+  --text-body: #352a42;
+  --text-muted: #6b5b7d;
+  --text-faint: #9284a3;
+  --text-rune: #7c3aed;
+  --text-inverted: #fff7db;
+  --accent-gold: #b45309;
+  --accent-danger: #9f1239;
+  --glyph-ring: rgba(91, 33, 182, 0.22);
+  --glyph-wash: radial-gradient(circle at 50% 50%, rgba(124, 58, 237, 0.15), rgba(251, 247, 239, 0) 58%);
+  --page-wash:
+    radial-gradient(circle at 78% 8%, rgba(124, 58, 237, 0.2), rgba(251, 247, 239, 0) 30%),
+    radial-gradient(circle at 14% 22%, rgba(180, 83, 9, 0.12), rgba(251, 247, 239, 0) 28%),
+    linear-gradient(135deg, rgba(245, 239, 255, 0.88), rgba(251, 247, 239, 0.96));
+  --shadow-glyph: 0 0 28px rgba(91, 33, 182, 0.16), 0 18px 54px rgba(59, 23, 111, 0.12);
+  --line-level: rgba(180, 83, 9, 0.92);
+  --line-school: rgba(13, 148, 136, 0.9);
+  --line-damage: rgba(37, 99, 235, 0.88);
+  --line-area: rgba(219, 39, 119, 0.88);
+  --line-range: rgba(124, 58, 237, 0.9);
+  --line-duration: rgba(22, 163, 74, 0.88);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-root: #09040f;
+    --bg-page: #09040f;
+    --bg-panel: rgba(20, 12, 31, 0.9);
+    --bg-panel-deep: rgba(12, 7, 18, 0.68);
+    --bg-node: #1d102b;
+    --bg-node-hover: #30164b;
+    --bg-node-selected: #f2d98d;
+    --bg-node-disabled: rgba(13, 10, 18, 0.86);
+    --border-soft: rgba(216, 180, 254, 0.2);
+    --border-strong: rgba(216, 180, 254, 0.58);
+    --text-title: #f4e7ff;
+    --text-body: #ddd0e8;
+    --text-muted: #aa98bc;
+    --text-faint: #776782;
+    --text-rune: rgba(221, 214, 254, 0.78);
+    --text-inverted: #160c22;
+    --accent-gold: #f1c766;
+    --accent-danger: #fecdd3;
+    --glyph-ring: rgba(232, 213, 255, 0.18);
+    --glyph-wash: radial-gradient(circle at 50% 50%, rgba(147, 51, 234, 0.23), rgba(20, 12, 31, 0) 58%);
+    --page-wash:
+      radial-gradient(circle at 82% 12%, rgba(126, 34, 206, 0.34), rgba(9, 4, 15, 0) 28%),
+      radial-gradient(circle at 18% 18%, rgba(20, 184, 166, 0.16), rgba(9, 4, 15, 0) 26%),
+      linear-gradient(135deg, rgba(50, 18, 82, 0.38), rgba(9, 4, 15, 0) 38%);
+    --shadow-glyph: 0 0 28px rgba(192, 132, 252, 0.2), 0 18px 54px rgba(0, 0, 0, 0.32);
+    --line-level: rgba(251, 191, 36, 0.92);
+    --line-school: rgba(45, 212, 191, 0.9);
+    --line-damage: rgba(96, 165, 250, 0.9);
+    --line-area: rgba(244, 114, 182, 0.9);
+    --line-range: rgba(196, 181, 253, 0.92);
+    --line-duration: rgba(74, 222, 128, 0.9);
+  }
 }
 
 body {
@@ -17,4 +84,273 @@ body {
 
 button {
   font: inherit;
+}
+
+.app-shell {
+  background: var(--bg-page);
+  color: var(--text-body);
+}
+
+.app-backdrop {
+  background: var(--page-wash);
+}
+
+.glyph-board {
+  background: var(--bg-panel);
+  border-color: var(--border-soft);
+}
+
+.glyph-board-wash {
+  background: var(--glyph-wash);
+}
+
+.glyph-node {
+  border-color: var(--border-strong);
+  color: var(--text-title);
+  outline-color: var(--accent-gold);
+}
+
+.glyph-node-idle {
+  background: var(--bg-node);
+  box-shadow: 0 0 16px color-mix(in srgb, var(--text-rune) 24%, transparent);
+}
+
+.glyph-node-idle:hover {
+  background: var(--bg-node-hover);
+  border-color: var(--accent-gold);
+}
+
+.glyph-node-selected {
+  background: var(--bg-node-selected);
+  border-color: var(--accent-gold);
+  color: var(--text-inverted);
+  box-shadow: 0 0 28px color-mix(in srgb, var(--text-rune) 58%, transparent);
+}
+
+.glyph-node-disabled {
+  background: var(--bg-node-disabled);
+  border-color: var(--border-soft);
+  color: var(--text-faint);
+}
+
+.arcane-button {
+  outline-color: var(--border-strong);
+}
+
+.arcane-button-primary {
+  background: color-mix(in srgb, var(--bg-node-hover) 72%, transparent);
+  border-color: var(--border-strong);
+  color: var(--text-title);
+}
+
+.arcane-button-primary:hover {
+  background: color-mix(in srgb, var(--bg-node-hover) 92%, transparent);
+  border-color: var(--accent-gold);
+}
+
+.arcane-button-danger {
+  background: color-mix(in srgb, var(--accent-danger) 12%, var(--bg-panel));
+  border-color: color-mix(in srgb, var(--accent-danger) 48%, transparent);
+  color: var(--accent-danger);
+}
+
+.arcane-button-danger:hover {
+  background: color-mix(in srgb, var(--accent-danger) 18%, var(--bg-panel));
+  border-color: color-mix(in srgb, var(--accent-danger) 70%, transparent);
+}
+
+.debug-panel {
+  background: var(--bg-panel);
+  border-color: var(--border-soft);
+}
+
+.debug-panel-inner {
+  background: var(--bg-panel-deep);
+  border-color: var(--border-soft);
+}
+
+.debug-edge-item {
+  background: color-mix(in srgb, var(--bg-node-hover) 22%, transparent);
+  border-color: var(--border-soft);
+}
+
+.glyph-reveal-stage {
+  animation: glyph-stage-charge 2300ms ease-out both;
+}
+
+.glyph-reveal-aura {
+  position: absolute;
+  inset: -18%;
+  pointer-events: none;
+  background:
+    conic-gradient(
+      from 0deg,
+      color-mix(in srgb, var(--accent-gold) 0%, transparent),
+      color-mix(in srgb, var(--accent-gold) 30%, transparent),
+      color-mix(in srgb, var(--text-rune) 34%, transparent),
+      color-mix(in srgb, var(--accent-gold) 0%, transparent)
+    );
+  filter: blur(18px);
+  opacity: 0;
+  animation: glyph-aura-turn 1500ms cubic-bezier(0.2, 0.78, 0.12, 1) forwards;
+}
+
+.glyph-reveal-line {
+  transform-box: view-box;
+  transform-origin: 250px 250px;
+  stroke-dasharray: 520;
+  stroke-dashoffset: 520;
+  animation: glyph-line-awaken 1200ms ease-out forwards;
+}
+
+.glyph-reveal-locked .glyph-reveal-line {
+  animation: glyph-line-lock 700ms ease-out both;
+  stroke-dashoffset: 0;
+}
+
+.spell-name-charging {
+  animation: spell-name-charge 1200ms ease-in-out infinite alternate;
+}
+
+.spell-name-reveal {
+  animation: spell-name-reveal 760ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  text-shadow: 0 0 34px color-mix(in srgb, var(--text-rune) 44%, transparent);
+}
+
+.spell-detail-reveal {
+  animation: spell-detail-reveal 720ms ease-out 180ms both;
+}
+
+@keyframes glyph-stage-charge {
+  0% {
+    box-shadow: var(--shadow-glyph);
+  }
+
+  62% {
+    border-color: var(--border-strong);
+    box-shadow:
+      0 0 34px color-mix(in srgb, var(--text-rune) 30%, transparent),
+      inset 0 0 42px color-mix(in srgb, var(--accent-gold) 14%, transparent);
+  }
+
+  100% {
+    box-shadow:
+      0 0 42px color-mix(in srgb, var(--text-rune) 34%, transparent),
+      inset 0 0 34px color-mix(in srgb, var(--line-school) 14%, transparent);
+  }
+}
+
+@keyframes glyph-aura-turn {
+  0% {
+    opacity: 0;
+    transform: rotate(0deg) scale(0.82);
+  }
+
+  25% {
+    opacity: 0.42;
+  }
+
+  86% {
+    opacity: 0.72;
+    transform: rotate(520deg) scale(1.06);
+  }
+
+  100% {
+    opacity: 0;
+    transform: rotate(620deg) scale(1.18);
+  }
+}
+
+@keyframes glyph-line-awaken {
+  0% {
+    opacity: 0.28;
+    stroke-dashoffset: 520;
+    transform: rotate(0deg);
+  }
+
+  72% {
+    opacity: 1;
+    stroke-dashoffset: 0;
+    transform: rotate(var(--edge-reveal-rotation, 0deg));
+  }
+
+  100% {
+    opacity: 1;
+    stroke-dashoffset: 0;
+    transform: rotate(var(--edge-reveal-rotation, 0deg));
+  }
+}
+
+@keyframes glyph-line-lock {
+  0% {
+    opacity: 0.72;
+    stroke-width: 3;
+  }
+
+  42% {
+    opacity: 1;
+    stroke-width: 6;
+  }
+
+  100% {
+    opacity: 1;
+    stroke-width: 4;
+  }
+}
+
+@keyframes spell-name-charge {
+  from {
+    opacity: 0.72;
+    text-shadow: 0 0 12px color-mix(in srgb, var(--text-rune) 18%, transparent);
+  }
+
+  to {
+    opacity: 1;
+    text-shadow: 0 0 26px color-mix(in srgb, var(--text-rune) 44%, transparent);
+  }
+}
+
+@keyframes spell-name-reveal {
+  0% {
+    opacity: 0;
+    filter: blur(14px);
+    transform: translateY(10px) scale(0.96);
+  }
+
+  68% {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0) scale(1.035);
+  }
+
+  100% {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes spell-detail-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .glyph-reveal-stage,
+  .glyph-reveal-aura,
+  .glyph-reveal-line,
+  .glyph-reveal-locked .glyph-reveal-line,
+  .spell-name-charging,
+  .spell-name-reveal,
+  .spell-detail-reveal {
+    animation-duration: 1ms;
+    animation-iteration-count: 1;
+  }
 }

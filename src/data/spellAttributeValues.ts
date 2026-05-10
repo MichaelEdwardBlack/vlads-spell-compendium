@@ -12,23 +12,31 @@ export const SPELL_SCHOOLS = [
 ] as const;
 
 export const SPELL_DAMAGE_OR_CONDITIONS = [
-  "None", // 0
-  "Acid", // 1
-  "Cold", // 11
-  "Fire", // 101
-  "Force", // 111
-  "Lightning", // 1001
-  "Necrotic", // 1011
-  "Poison", // 1101
-  "Psychic", // 1111
-  "Radiant", // 10001
-  "Thunder", // 10011
-  "Ward", // 10101
-  "Healing", // 10111
-  "Paralyzed", // 11001
-  "Teleportation", // 11011
-  "Negation", // 11101
-  "Invisible", // 11111
+  "None",
+  "Acid",
+  "Cold",
+  "Fire",
+  "Force",
+  "Lightning",
+  "Necrotic",
+  "Poison",
+  "Psychic",
+  "Radiant",
+  "Thunder",
+  "Bludgeoning",
+  "Ward",
+  "Healing",
+  "Frightened",
+  "Charmed",
+  "Blinded",
+  "Unconscious",
+  "Incapacitated",
+  "Paralyzed",
+  "Teleportation",
+  "Negation",
+  "Invisible",
+  "Acid, Cold, Fire, Lighting, Poison, or Thunder",
+  "Cold and Piercing",
 ] as const;
 
 export const SPELL_AREAS = [
@@ -41,9 +49,22 @@ export const SPELL_AREAS = [
   "Cube",
   "Line",
   "Cone",
+  "Square",
+  "Point",
 ] as const;
 
-export const SPELL_RANGES = ["Self", "Touch", "10 feet", "30 feet", "60 feet", "90 feet", "120 feet", "Long"] as const;
+export const SPELL_RANGES = [
+  "Self",
+  "Touch",
+  "5 feet",
+  "10 feet",
+  "15 feet",
+  "30 feet",
+  "60 feet",
+  "90 feet",
+  "120 feet",
+  "Long",
+] as const;
 
 export const SPELL_DURATIONS = [
   "Instantaneous",

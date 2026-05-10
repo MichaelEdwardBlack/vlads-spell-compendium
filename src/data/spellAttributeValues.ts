@@ -24,6 +24,8 @@ export const SPELL_DAMAGE_OR_CONDITIONS = [
   "Radiant",
   "Thunder",
   "Bludgeoning",
+  "Slashing",
+  "Piercing",
   "Ward",
   "Healing",
   "Frightened",
@@ -35,8 +37,12 @@ export const SPELL_DAMAGE_OR_CONDITIONS = [
   "Teleportation",
   "Negation",
   "Invisible",
+  "Restrained",
   "Acid, Cold, Fire, Lighting, Poison, or Thunder",
   "Cold and Piercing",
+  "Blinded or Deafened",
+  "Acid, Cold, Fire, Lighting, or Poison",
+  "Charmed, Blinded, or Incapacitated",
 ] as const;
 
 export const SPELL_AREAS = [
@@ -63,6 +69,8 @@ export const SPELL_RANGES = [
   "60 feet",
   "90 feet",
   "120 feet",
+  "300 feet",
+  "Sight",
   "Long",
 ] as const;
 
@@ -75,6 +83,7 @@ export const SPELL_DURATIONS = [
   "8 hours",
   "24 hours",
   "10 days",
+  "Until dispelled",
 ] as const;
 
 export type SpellLevel = (typeof SPELL_LEVELS)[number];

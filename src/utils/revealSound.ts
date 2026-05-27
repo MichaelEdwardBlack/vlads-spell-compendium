@@ -49,6 +49,36 @@ export function playSpellRevealSound() {
   playLockChord(context, master, lockTime);
 }
 
+export function playTimerWarningSound(remainingSeconds: number) {
+  const context = getAudioContext();
+
+  if (!context) {
+    return;
+  }
+
+  void context.resume();
+
+  const startTime = context.currentTime + 0.01;
+  const duration = remainingSeconds <= 3 ? 0.22 : 0.14;
+  const oscillator = context.createOscillator();
+  const gain = context.createGain();
+  const filter = context.createBiquadFilter();
+
+  oscillator.type = remainingSeconds <= 3 ? 'square' : 'triangle';
+  oscillator.frequency.setValueAtTime(remainingSeconds <= 3 ? 880 : 660, startTime);
+  filter.type = 'lowpass';
+  filter.frequency.setValueAtTime(remainingSeconds <= 3 ? 1800 : 1400, startTime);
+  gain.gain.setValueAtTime(0.0001, startTime);
+  gain.gain.exponentialRampToValueAtTime(remainingSeconds <= 3 ? 0.34 : 0.24, startTime + 0.012);
+  gain.gain.exponentialRampToValueAtTime(0.0001, startTime + duration);
+
+  oscillator.connect(filter);
+  filter.connect(gain);
+  gain.connect(context.destination);
+  oscillator.start(startTime);
+  oscillator.stop(startTime + duration + 0.03);
+}
+
 function playRisingTone(context: AudioContext, destination: AudioNode, startTime: number, lockTime: number) {
   const oscillator = context.createOscillator();
   const gain = context.createGain();

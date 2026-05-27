@@ -1,4 +1,4 @@
-import { RotateCcw, WandSparkles } from 'lucide-react';
+import { RotateCcw } from 'lucide-react';
 import type { CSSProperties } from 'react';
 import { useMemo, useState } from 'react';
 import type { NormalizedEdge } from '../types';
@@ -17,9 +17,9 @@ type GlyphBoardProps = {
   canToggleEdge: (edge: NormalizedEdge) => boolean;
   isRevealing?: boolean;
   isRevealLocked?: boolean;
+  isDisabled?: boolean;
   revealRotationStepsByEdge?: Record<NormalizedEdge, number>;
   onToggleEdge: (edge: NormalizedEdge) => void;
-  onNormalize?: () => void;
   onReset: () => void;
 };
 
@@ -47,9 +47,9 @@ export function GlyphBoard({
   canToggleEdge,
   isRevealing = false,
   isRevealLocked = false,
+  isDisabled = false,
   revealRotationStepsByEdge = {},
   onToggleEdge,
-  onNormalize,
   onReset,
 }: GlyphBoardProps) {
   const [selectedNode, setSelectedNode] = useState<number | null>(null);
@@ -60,7 +60,7 @@ export function GlyphBoard({
   );
 
   function handleNodeClick(nodeIndex: number) {
-    if (isRevealing) {
+    if (isRevealing || isDisabled) {
       return;
     }
 
@@ -91,6 +91,7 @@ export function GlyphBoard({
           'glyph-board relative aspect-square w-full overflow-hidden rounded-lg border shadow-glyph',
           isRevealing ? 'glyph-reveal-stage' : '',
           isRevealLocked ? 'glyph-reveal-locked' : '',
+          isDisabled && !isRevealing ? 'glyph-board-disabled' : '',
         ].join(' ')}
       >
         <div className="glyph-board-wash absolute inset-0" />
@@ -158,7 +159,7 @@ export function GlyphBoard({
           const isSelected = selectedNode === node.index;
           const candidateEdge =
             selectedNode !== null && selectedNode !== node.index ? normalizeEdge(selectedNode, node.index) : null;
-          const isDisabled = candidateEdge !== null && !canToggleEdge(candidateEdge);
+          const isCandidateDisabled = candidateEdge !== null && !canToggleEdge(candidateEdge);
 
           return (
             <button
@@ -166,14 +167,14 @@ export function GlyphBoard({
               type="button"
               aria-label={`Node ${node.index + 1}`}
               aria-pressed={isSelected}
-              disabled={isRevealing || isDisabled}
+              disabled={isRevealing || isDisabled || isCandidateDisabled}
               onClick={() => handleNodeClick(node.index)}
               className={[
                 'glyph-node absolute flex h-10 w-10 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border text-xs font-bold transition',
                 'focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4',
                 isSelected
                   ? 'glyph-node-selected'
-                  : isDisabled
+                  : isCandidateDisabled
                     ? 'glyph-node-disabled cursor-not-allowed shadow-none'
                   : 'glyph-node-idle',
               ].join(' ')}
@@ -189,19 +190,6 @@ export function GlyphBoard({
       </div>
 
       <div className="mt-4 flex flex-wrap items-center justify-center gap-3">
-        {onNormalize && !isRevealing ? (
-          <button
-            type="button"
-            onClick={() => {
-              setSelectedNode(null);
-              onNormalize();
-            }}
-            className="arcane-button arcane-button-primary inline-flex items-center gap-2 rounded-md border px-4 py-2 text-sm font-semibold transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4"
-          >
-            <WandSparkles aria-hidden="true" size={16} />
-            Normalize
-          </button>
-        ) : null}
         <button
           type="button"
           onClick={() => {

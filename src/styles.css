@@ -88,7 +88,7 @@ button {
 
 .app-shell {
   position: relative;
-  overflow-x: hidden;
+  overflow-x: clip;
   background: var(--bg-page);
   color: var(--text-body);
 }
@@ -104,6 +104,10 @@ button {
 
 .glyph-board-wash {
   background: var(--glyph-wash);
+}
+
+.glyph-board-disabled {
+  opacity: 0.74;
 }
 
 .glyph-node {
@@ -182,13 +186,21 @@ button {
 }
 
 .gallery-card,
-.attribute-section {
+.attribute-section,
+.cast-history-panel,
+.game-hud,
+.spell-reward-panel {
   background: var(--bg-panel);
   border-color: var(--border-soft);
 }
 
+.game-hud {
+  backdrop-filter: blur(10px);
+}
+
 .gallery-glyph-frame,
-.key-glyph-frame {
+.key-glyph-frame,
+.cast-history-glyph {
   background:
     radial-gradient(circle at 50% 50%, color-mix(in srgb, var(--text-rune) 12%, transparent), transparent 58%),
     color-mix(in srgb, var(--bg-panel-deep) 82%, transparent);
@@ -233,6 +245,116 @@ button {
 .debug-edge-item {
   background: color-mix(in srgb, var(--bg-node-hover) 22%, transparent);
   border-color: var(--border-soft);
+}
+
+.game-stat,
+.reward-attribute,
+.hint-choice-button,
+.discovered-key-button,
+.cast-history-card,
+.cast-history-empty {
+  background: color-mix(in srgb, var(--bg-node-hover) 14%, transparent);
+  border-color: var(--border-soft);
+}
+
+.game-stat-time-warning {
+  border-color: color-mix(in srgb, var(--accent-danger) 44%, var(--border-soft));
+  background: color-mix(in srgb, var(--accent-danger) 10%, var(--bg-panel));
+  animation: timer-warning-pulse 1000ms steps(2, end) infinite;
+}
+
+.game-stat-time-critical {
+  border-color: color-mix(in srgb, var(--accent-danger) 72%, var(--border-soft));
+  background: color-mix(in srgb, var(--accent-danger) 28%, var(--bg-panel));
+  animation: timer-critical-pulse 620ms ease-in-out infinite alternate;
+}
+
+.game-stat-time-warning .game-time-value,
+.game-stat-time-critical .game-time-value {
+  color: var(--accent-danger);
+}
+
+.hint-choice-button,
+.discovered-key-button,
+.round-control-button {
+  outline-color: var(--accent-gold);
+}
+
+.hint-status-pill {
+  background: color-mix(in srgb, var(--bg-panel-deep) 70%, transparent);
+  border-color: var(--border-soft);
+  color: var(--text-faint);
+}
+
+.hint-choice-button:hover,
+.discovered-key-button:hover:not(:disabled),
+.round-control-button:hover:not(:disabled) {
+  background: color-mix(in srgb, var(--bg-node-hover) 28%, transparent);
+  border-color: var(--border-strong);
+}
+
+.round-control-button {
+  background: transparent;
+  color: var(--text-title);
+}
+
+.resume-countdown-overlay {
+  background:
+    radial-gradient(circle at 50% 50%, color-mix(in srgb, var(--bg-panel) 84%, transparent), transparent 42%),
+    color-mix(in srgb, var(--bg-page) 46%, transparent);
+  backdrop-filter: blur(2px);
+}
+
+.resume-countdown-number {
+  display: grid;
+  width: min(36vw, 10rem);
+  aspect-ratio: 1;
+  place-items: center;
+  border: 1px solid var(--border-strong);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--bg-panel) 88%, transparent);
+  box-shadow: var(--shadow-glyph);
+  font-size: clamp(3rem, 14vw, 6rem);
+  line-height: 1;
+  animation: countdown-pulse 900ms ease-out both;
+}
+
+.pause-modal-backdrop {
+  background:
+    radial-gradient(circle at 50% 22%, color-mix(in srgb, var(--text-rune) 18%, transparent), transparent 36%),
+    color-mix(in srgb, #000 58%, transparent);
+  backdrop-filter: blur(4px);
+}
+
+.pause-modal-backdrop .spell-reward-panel {
+  max-height: min(42rem, calc(100vh - 2rem));
+  overflow-y: auto;
+}
+
+.cast-history-card summary {
+  outline-color: var(--accent-gold);
+}
+
+.cast-history-card summary:hover {
+  background: color-mix(in srgb, var(--bg-node-hover) 20%, transparent);
+}
+
+.cast-history-details {
+  border-color: var(--border-soft);
+  background: color-mix(in srgb, var(--bg-panel-deep) 58%, transparent);
+}
+
+.arcane-icon-button {
+  background: color-mix(in srgb, var(--bg-node) 62%, transparent);
+  border-color: var(--border-soft);
+  color: var(--text-muted);
+  outline-color: var(--accent-gold);
+}
+
+.arcane-icon-button:hover {
+  background: color-mix(in srgb, var(--bg-node-hover) 84%, transparent);
+  border-color: var(--border-strong);
+  color: var(--text-title);
 }
 
 .glyph-reveal-stage {
@@ -403,6 +525,45 @@ button {
   }
 }
 
+@keyframes countdown-pulse {
+  from {
+    opacity: 0;
+    transform: scale(0.82);
+  }
+
+  30% {
+    opacity: 1;
+    transform: scale(1.04);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes timer-warning-pulse {
+  from {
+    box-shadow: 0 0 0 color-mix(in srgb, var(--accent-danger) 0%, transparent);
+  }
+
+  to {
+    box-shadow: 0 0 14px color-mix(in srgb, var(--accent-danger) 28%, transparent);
+  }
+}
+
+@keyframes timer-critical-pulse {
+  from {
+    box-shadow: 0 0 0 color-mix(in srgb, var(--accent-danger) 0%, transparent);
+    transform: translateY(0);
+  }
+
+  to {
+    box-shadow: 0 0 18px color-mix(in srgb, var(--accent-danger) 36%, transparent);
+    transform: translateY(-1px);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .glyph-reveal-stage,
   .glyph-reveal-aura,
@@ -410,7 +571,10 @@ button {
   .glyph-reveal-locked .glyph-reveal-line,
   .spell-name-charging,
   .spell-name-reveal,
-  .spell-detail-reveal {
+  .spell-detail-reveal,
+  .resume-countdown-number,
+  .game-stat-time-warning,
+  .game-stat-time-critical {
     animation-duration: 1ms;
     animation-iteration-count: 1;
   }

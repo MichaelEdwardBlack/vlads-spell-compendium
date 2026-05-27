@@ -10,6 +10,10 @@ import {
 
 const REQUIRED_EDGE_CACHE = new Map<string, NormalizedEdge[]>();
 
+type SpellMatchOptions = {
+  excludedSpellNames?: ReadonlySet<string>;
+};
+
 export function getRequiredEdgesForSpell(spell: Spell): NormalizedEdge[] {
   const cached = REQUIRED_EDGE_CACHE.get(spell.name);
 
@@ -23,10 +27,17 @@ export function getRequiredEdgesForSpell(spell: Spell): NormalizedEdge[] {
   return requiredEdges;
 }
 
-export function findExactSpellMatch(drawnEdges: Iterable<NormalizedEdge>): Spell | undefined {
+export function findExactSpellMatch(
+  drawnEdges: Iterable<NormalizedEdge>,
+  options: SpellMatchOptions = {},
+): Spell | undefined {
   const drawnEdgeList = [...drawnEdges];
 
   return SPELLS.find((spell) => {
+    if (options.excludedSpellNames?.has(spell.name)) {
+      return false;
+    }
+
     const requiredKeys = spellToRequiredCanonicalKeys(spell);
 
     return ATTRIBUTE_DEFINITIONS.every((attribute) => {
@@ -38,14 +49,20 @@ export function findExactSpellMatch(drawnEdges: Iterable<NormalizedEdge>): Spell
 
 export function findPossibleMatchingSpellsFromPartialDrawnEdges(
   drawnEdges: Iterable<NormalizedEdge>,
+  options: SpellMatchOptions = {},
 ): Spell[] {
   const drawnEdgeList = [...drawnEdges];
 
-  return SPELLS.filter((spell) => spellCanContainPartialEdges(spell, drawnEdgeList));
+  return SPELLS.filter((spell) => (
+    !options.excludedSpellNames?.has(spell.name) && spellCanContainPartialEdges(spell, drawnEdgeList)
+  ));
 }
 
-export function countPossibleMatchingSpellsFromPartialDrawnEdges(drawnEdges: Iterable<NormalizedEdge>): number {
-  return findPossibleMatchingSpellsFromPartialDrawnEdges(drawnEdges).length;
+export function countPossibleMatchingSpellsFromPartialDrawnEdges(
+  drawnEdges: Iterable<NormalizedEdge>,
+  options: SpellMatchOptions = {},
+): number {
+  return findPossibleMatchingSpellsFromPartialDrawnEdges(drawnEdges, options).length;
 }
 
 export function detectInvalidLinesForRemainingPossibleSpells(

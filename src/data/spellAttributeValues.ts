@@ -38,11 +38,16 @@ export const SPELL_DAMAGE_OR_CONDITIONS = [
   "Negation",
   "Invisible",
   "Restrained",
+  "Disadvantage",
+  "Advantage",
+  "Buff",
   "Acid, Cold, Fire, Lighting, Poison, or Thunder",
   "Cold and Piercing",
   "Blinded or Deafened",
   "Acid, Cold, Fire, Lighting, or Poison",
   "Charmed, Blinded, or Incapacitated",
+  "Radiant, Necrotic, or Cold",
+  "Force and Piercing",
 ] as const;
 
 export const SPELL_AREAS = [
@@ -57,6 +62,8 @@ export const SPELL_AREAS = [
   "Cone",
   "Square",
   "Point",
+  "Cylinder",
+  "Cube or Sphere",
 ] as const;
 
 export const SPELL_RANGES = [
@@ -69,9 +76,11 @@ export const SPELL_RANGES = [
   "60 feet",
   "90 feet",
   "120 feet",
+  "150 feet",
   "300 feet",
   "Sight",
-  "Long",
+  "1 mile",
+  "Unlimited",
 ] as const;
 
 export const SPELL_DURATIONS = [

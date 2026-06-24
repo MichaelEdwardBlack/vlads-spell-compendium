@@ -58,6 +58,7 @@ export const SPELL_DAMAGE_OR_CONDITIONS = [
   "Charmed or Frightened",
   "Charmed, Frightened, or Stunned",
   "Fire and Bludgeoning",
+  "Acid, Cold, Fire, Lightning, Necrotic, or Poison",
 ] as const;
 
 export const SPELL_AREAS = [

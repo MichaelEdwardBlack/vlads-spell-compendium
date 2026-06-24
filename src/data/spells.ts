@@ -3153,7 +3153,7 @@ export const SPELLS = [
     link: "https://dnd5e.wikidot.com/spell:illusory-dragon",
     level: 8,
     school: "Illusion",
-    damageOrCondition: "Psychic",
+    damageOrCondition: "Acid, Cold, Fire, Lightning, Necrotic, or Poison",
     area: "Point",
     range: "120 feet",
     duration: "1 minute",

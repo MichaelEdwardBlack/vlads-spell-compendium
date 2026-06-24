@@ -186,6 +186,8 @@ button {
 }
 
 .gallery-card,
+.gallery-empty-state,
+.gallery-search,
 .attribute-section,
 .cast-history-panel,
 .game-hud,
@@ -245,6 +247,20 @@ button {
 .debug-edge-item {
   background: color-mix(in srgb, var(--bg-node-hover) 22%, transparent);
   border-color: var(--border-soft);
+}
+
+.gallery-search {
+  background: color-mix(in srgb, var(--bg-panel) 92%, transparent);
+  border-color: var(--border-soft);
+}
+
+.gallery-search:focus-within {
+  border-color: var(--border-strong);
+  box-shadow: var(--shadow-glyph);
+}
+
+.gallery-search-input::-webkit-search-cancel-button {
+  appearance: none;
 }
 
 .game-stat,

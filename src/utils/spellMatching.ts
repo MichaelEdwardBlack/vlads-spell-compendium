@@ -1,5 +1,5 @@
 import { SPELLS } from '../data/spells';
-import type { NormalizedEdge, Spell } from '../types';
+import type { NormalizedEdge, Spell, SpellAttribute } from '../types';
 import { ATTRIBUTE_DEFINITIONS } from '../data/spellwritingKeys';
 import {
   edgeToSkipStart,
@@ -12,6 +12,7 @@ const REQUIRED_EDGE_CACHE = new Map<string, NormalizedEdge[]>();
 
 type SpellMatchOptions = {
   excludedSpellNames?: ReadonlySet<string>;
+  requiredAttributeValues?: Partial<Record<SpellAttribute, string>>;
 };
 
 export function getRequiredEdgesForSpell(spell: Spell): NormalizedEdge[] {
@@ -38,6 +39,10 @@ export function findExactSpellMatch(
       return false;
     }
 
+    if (!spellMatchesRequiredAttributeValues(spell, options.requiredAttributeValues)) {
+      return false;
+    }
+
     const requiredKeys = spellToRequiredCanonicalKeys(spell);
 
     return ATTRIBUTE_DEFINITIONS.every((attribute) => {
@@ -53,9 +58,12 @@ export function findPossibleMatchingSpellsFromPartialDrawnEdges(
 ): Spell[] {
   const drawnEdgeList = [...drawnEdges];
 
-  return SPELLS.filter((spell) => (
-    !options.excludedSpellNames?.has(spell.name) && spellCanContainPartialEdges(spell, drawnEdgeList)
-  ));
+  return SPELLS.filter(
+    (spell) =>
+      !options.excludedSpellNames?.has(spell.name) &&
+      spellMatchesRequiredAttributeValues(spell, options.requiredAttributeValues) &&
+      spellCanContainPartialEdges(spell, drawnEdgeList),
+  );
 }
 
 export function countPossibleMatchingSpellsFromPartialDrawnEdges(
@@ -116,6 +124,19 @@ function spellCanContainPartialEdges(spell: Spell, drawnEdges: NormalizedEdge[])
 
     return startsCanFitCanonicalKey(startsForSkip, requiredKeys[attribute.id]);
   });
+}
+
+function spellMatchesRequiredAttributeValues(
+  spell: Spell,
+  requiredAttributeValues: SpellMatchOptions['requiredAttributeValues'],
+): boolean {
+  if (!requiredAttributeValues) {
+    return true;
+  }
+
+  return Object.entries(requiredAttributeValues).every(
+    ([attributeId, value]) => value === undefined || String(spell[attributeId as SpellAttribute]) === value,
+  );
 }
 
 function startsCanFitCanonicalKey(starts: number[], canonicalKey: string): boolean {

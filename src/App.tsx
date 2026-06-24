@@ -215,6 +215,38 @@ function applyHintKeyToEdges(
   ).sort() as NormalizedEdge[];
 }
 
+function getRequiredAttributeValuesForAppliedKeys(
+  appliedKeys: readonly DiscoveredKeyEntry[],
+): Partial<Record<SpellAttribute, string>> {
+  return Object.fromEntries(appliedKeys.map((entry) => [entry.attributeId, entry.value]));
+}
+
+function getAppliedKeysWithEntry(
+  appliedKeys: readonly DiscoveredKeyEntry[],
+  entry: DiscoveredKeyEntry,
+): readonly DiscoveredKeyEntry[] | null {
+  const existingAttributeKey = appliedKeys.find((appliedKey) => appliedKey.attributeId === entry.attributeId);
+
+  if (existingAttributeKey && existingAttributeKey.id !== entry.id) {
+    return null;
+  }
+
+  if (existingAttributeKey) {
+    return appliedKeys;
+  }
+
+  return [entry, ...appliedKeys];
+}
+
+function getLockedAttributeSkips(appliedKeys: readonly DiscoveredKeyEntry[]): ReadonlySet<number> {
+  return new Set(
+    appliedKeys.flatMap((entry) => {
+      const attribute = getHintAttributeDefinition(entry.attributeId);
+      return attribute ? [attribute.skip] : [];
+    }),
+  );
+}
+
 function GameHud({
   status,
   remainingSeconds,
@@ -435,10 +467,14 @@ function KeyConflictPanel({
 function DiscoveredKeysPanel({
   keys,
   canApply,
+  canApplyKey,
+  isAppliedKey,
   onApplyKey,
 }: {
   keys: readonly DiscoveredKeyEntry[];
   canApply: boolean;
+  canApplyKey: (entry: DiscoveredKeyEntry) => boolean;
+  isAppliedKey: (entry: DiscoveredKeyEntry) => boolean;
   onApplyKey: (entry: DiscoveredKeyEntry) => void;
 }) {
   return (
@@ -450,42 +486,54 @@ function DiscoveredKeysPanel({
 
       <div className="mt-4 grid gap-3">
         {keys.length > 0 ? (
-          keys.map((entry) => (
-            <button
-              key={entry.id}
-              type="button"
-              onClick={() => onApplyKey(entry)}
-              disabled={!canApply}
-              className="discovered-key-button rounded-md border p-3 text-left transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 disabled:cursor-not-allowed disabled:opacity-55"
-            >
-              <span className="grid grid-cols-[4.5rem_1fr] items-center gap-3">
-                <span className="cast-history-glyph grid aspect-square place-items-center rounded-md border">
-                  <GlyphDiagram
-                    edges={entry.edges}
-                    label={`${entry.attributeLabel}: ${entry.value} key glyph`}
-                    className="h-full w-full"
-                    strokeWidth={5}
-                  />
-                </span>
-                <span className="min-w-0">
-                  <span className="block text-xs font-semibold uppercase tracking-[0.14em] text-[var(--text-faint)]">
-                    {entry.attributeLabel}
+          keys.map((entry) => {
+            const isApplied = isAppliedKey(entry);
+            const isBlocked = !canApplyKey(entry);
+
+            return (
+              <button
+                key={entry.id}
+                type="button"
+                onClick={() => onApplyKey(entry)}
+                disabled={!canApply || isApplied || isBlocked}
+                className="discovered-key-button rounded-md border p-3 text-left transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 disabled:cursor-not-allowed disabled:opacity-55"
+              >
+                <span className="grid grid-cols-[4.5rem_1fr] items-center gap-3">
+                  <span className="cast-history-glyph grid aspect-square place-items-center rounded-md border">
+                    <GlyphDiagram
+                      edges={entry.edges}
+                      label={`${entry.attributeLabel}: ${entry.value} key glyph`}
+                      className="h-full w-full"
+                      strokeWidth={5}
+                    />
                   </span>
-                  <span className="mt-1 block break-words font-semibold text-[var(--text-title)]">{entry.value}</span>
-                  {entry.edges.length === 0 ? (
-                    <span className="mt-1 flex items-center gap-1.5 text-xs text-[var(--text-muted)]">
-                      <span
-                        aria-hidden="true"
-                        className="h-2.5 w-2.5 shrink-0 rounded-full"
-                        style={{ backgroundColor: getHintLineColor(entry) }}
-                      />
-                      {formatDiscoveredKeyValue(entry)}
+                  <span className="min-w-0">
+                    <span className="flex min-w-0 flex-wrap items-center justify-between gap-2">
+                      <span className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--text-faint)]">
+                        {entry.attributeLabel}
+                      </span>
+                      <span className="hint-status-pill rounded-md border px-2 py-1 text-xs font-semibold">
+                        {isApplied ? "Active" : isBlocked ? "Blocked" : "Apply"}
+                      </span>
                     </span>
-                  ) : null}
+                    <span className="mt-1 block break-words font-semibold text-[var(--text-title)]">
+                      {entry.value}
+                    </span>
+                    {entry.edges.length === 0 ? (
+                      <span className="mt-1 flex items-center gap-1.5 text-xs text-[var(--text-muted)]">
+                        <span
+                          aria-hidden="true"
+                          className="h-2.5 w-2.5 shrink-0 rounded-full"
+                          style={{ backgroundColor: getHintLineColor(entry) }}
+                        />
+                        {formatDiscoveredKeyValue(entry)}
+                      </span>
+                    ) : null}
+                  </span>
                 </span>
-              </span>
-            </button>
-          ))
+              </button>
+            );
+          })
         ) : (
           <div className="cast-history-empty rounded-md border p-4 text-sm text-[var(--text-muted)]">
             Solve a spell to claim your first key.
@@ -566,16 +614,26 @@ function PuzzleSidebar({
   history,
   discoveredKeys,
   canApplyKeys,
+  canApplyDiscoveredKey,
+  isAppliedDiscoveredKey,
   onApplyKey,
 }: {
   history: readonly CastHistoryEntry[];
   discoveredKeys: readonly DiscoveredKeyEntry[];
   canApplyKeys: boolean;
+  canApplyDiscoveredKey: (entry: DiscoveredKeyEntry) => boolean;
+  isAppliedDiscoveredKey: (entry: DiscoveredKeyEntry) => boolean;
   onApplyKey: (entry: DiscoveredKeyEntry) => void;
 }) {
   return (
     <aside className="cast-history-panel grid w-full gap-6 rounded-lg border p-4 shadow-glyph lg:sticky lg:top-8">
-      <DiscoveredKeysPanel keys={discoveredKeys} canApply={canApplyKeys} onApplyKey={onApplyKey} />
+      <DiscoveredKeysPanel
+        keys={discoveredKeys}
+        canApply={canApplyKeys}
+        canApplyKey={canApplyDiscoveredKey}
+        isAppliedKey={isAppliedDiscoveredKey}
+        onApplyKey={onApplyKey}
+      />
       <CastHistoryPanel history={history} />
     </aside>
   );
@@ -590,21 +648,32 @@ function CasterPage() {
   const [revealedSpellName, setRevealedSpellName] = useState<string | null>(null);
   const [castHistory, setCastHistory] = useState<CastHistoryEntry[]>([]);
   const [discoveredKeys, setDiscoveredKeys] = useState<DiscoveredKeyEntry[]>([]);
+  const [appliedHintKeys, setAppliedHintKeys] = useState<DiscoveredKeyEntry[]>([]);
   const [pendingReward, setPendingReward] = useState<PendingSpellReward | null>(null);
   const [pendingKeyConflict, setPendingKeyConflict] = useState<PendingKeyConflict | null>(null);
   const [gameStatus, setGameStatus] = useState<GameStatus>("idle");
   const [remainingSeconds, setRemainingSeconds] = useState(GAME_DURATION_SECONDS);
   const [resumeCountdown, setResumeCountdown] = useState<number | null>(null);
   const solvedSpellNames = useMemo(() => new Set(castHistory.map((entry) => entry.spell.name)), [castHistory]);
+  const requiredAttributeValues = useMemo(
+    () => getRequiredAttributeValuesForAppliedKeys(appliedHintKeys),
+    [appliedHintKeys],
+  );
+  const lockedAttributeSkips = useMemo(() => getLockedAttributeSkips(appliedHintKeys), [appliedHintKeys]);
   const matchedSpell = useMemo(
-    () => findExactSpellMatch(drawnEdges, { excludedSpellNames: solvedSpellNames }),
-    [drawnEdges, solvedSpellNames],
+    () =>
+      findExactSpellMatch(drawnEdges, {
+        excludedSpellNames: solvedSpellNames,
+        requiredAttributeValues,
+      }),
+    [drawnEdges, requiredAttributeValues, solvedSpellNames],
   );
   const possibleSpellCount = useMemo(
     () => countPossibleMatchingSpellsFromPartialDrawnEdges(drawnEdges, {
       excludedSpellNames: solvedSpellNames,
+      requiredAttributeValues,
     }),
-    [drawnEdges, solvedSpellNames],
+    [drawnEdges, requiredAttributeValues, solvedSpellNames],
   );
   const sortedDrawnEdges = useMemo(() => [...drawnEdges].sort(), [drawnEdges]);
   const canInteractWithBoard = gameStatus === "running" && !pendingReward && !pendingKeyConflict && remainingSeconds > 0;
@@ -623,6 +692,7 @@ function CasterPage() {
           setIsRevealingSpell(false);
           setPendingReward(null);
           setPendingKeyConflict(null);
+          setAppliedHintKeys([]);
           setResumeCountdown(null);
           return 0;
         }
@@ -676,6 +746,7 @@ function CasterPage() {
     const solvedSpellNamesAfterMatch = new Set([...solvedSpellNames, spellName]);
     const possibleCountAfterNormalize = countPossibleMatchingSpellsFromPartialDrawnEdges(normalizedEdges, {
       excludedSpellNames: solvedSpellNamesAfterMatch,
+      requiredAttributeValues,
     });
     setRevealRotationStepsByEdge(getNormalizationRotationStepsByEdge(drawnEdges));
     setIsRevealingSpell(true);
@@ -715,6 +786,10 @@ function CasterPage() {
       return;
     }
 
+    if (lockedAttributeSkips.has(edgeToSkipStart(edge).skip)) {
+      return;
+    }
+
     primeRevealAudio();
     setRevealRotationStepsByEdge({});
     setRevealedSpellName(null);
@@ -736,6 +811,10 @@ function CasterPage() {
       return false;
     }
 
+    if (lockedAttributeSkips.has(edgeToSkipStart(edge).skip)) {
+      return false;
+    }
+
     if (drawnEdges.has(edge)) {
       return true;
     }
@@ -743,6 +822,7 @@ function CasterPage() {
     return (
       countPossibleMatchingSpellsFromPartialDrawnEdges([...drawnEdges, edge], {
         excludedSpellNames: solvedSpellNames,
+        requiredAttributeValues,
       }) > 0
     );
   }
@@ -753,6 +833,7 @@ function CasterPage() {
     setIsRevealingSpell(false);
     setRevealedSpellName(null);
     setDrawnEdges(new Set());
+    setAppliedHintKeys([]);
   }
 
   function resetPuzzleRound(nextStatus: GameStatus) {
@@ -763,6 +844,7 @@ function CasterPage() {
     setPendingReward(null);
     setPendingKeyConflict(null);
     setDrawnEdges(new Set());
+    setAppliedHintKeys([]);
     setCastHistory([]);
     setDiscoveredKeys([]);
     setRemainingSeconds(GAME_DURATION_SECONDS);
@@ -816,6 +898,7 @@ function CasterPage() {
   function resumeAfterReward(shouldResetBoard: boolean) {
     if (shouldResetBoard) {
       setDrawnEdges(new Set());
+      setAppliedHintKeys([]);
       setRevealedSpellName(null);
     }
 
@@ -862,8 +945,36 @@ function CasterPage() {
     resumeAfterReward(pendingReward.shouldResetAfterHint);
   }
 
+  function getCanApplyDiscoveredKey(entry: DiscoveredKeyEntry): boolean {
+    const proposedAppliedKeys = getAppliedKeysWithEntry(appliedHintKeys, entry);
+
+    if (!proposedAppliedKeys) {
+      return false;
+    }
+
+    const proposedEdges = applyHintKeyToEdges(drawnEdges, entry);
+    const proposedRequiredAttributeValues = getRequiredAttributeValuesForAppliedKeys(proposedAppliedKeys);
+
+    return (
+      countPossibleMatchingSpellsFromPartialDrawnEdges(proposedEdges, {
+        excludedSpellNames: solvedSpellNames,
+        requiredAttributeValues: proposedRequiredAttributeValues,
+      }) > 0
+    );
+  }
+
+  function getIsAppliedDiscoveredKey(entry: DiscoveredKeyEntry): boolean {
+    return appliedHintKeys.some((appliedKey) => appliedKey.id === entry.id);
+  }
+
   function handleApplyDiscoveredKey(entry: DiscoveredKeyEntry) {
     if (!canInteractWithBoard) {
+      return;
+    }
+
+    const proposedAppliedKeys = getAppliedKeysWithEntry(appliedHintKeys, entry);
+
+    if (!proposedAppliedKeys) {
       return;
     }
 
@@ -871,9 +982,16 @@ function CasterPage() {
     setRevealRotationStepsByEdge({});
     setRevealedSpellName(null);
     const proposedEdges = applyHintKeyToEdges(drawnEdges, entry);
+    const proposedRequiredAttributeValues = getRequiredAttributeValuesForAppliedKeys(proposedAppliedKeys);
 
-    if (countPossibleMatchingSpellsFromPartialDrawnEdges(proposedEdges, { excludedSpellNames: solvedSpellNames }) > 0) {
+    if (
+      countPossibleMatchingSpellsFromPartialDrawnEdges(proposedEdges, {
+        excludedSpellNames: solvedSpellNames,
+        requiredAttributeValues: proposedRequiredAttributeValues,
+      }) > 0
+    ) {
       setDrawnEdges(new Set(proposedEdges));
+      setAppliedHintKeys([...proposedAppliedKeys]);
       return;
     }
 
@@ -882,6 +1000,7 @@ function CasterPage() {
       proposedEdges,
       canOverride: countPossibleMatchingSpellsFromPartialDrawnEdges(entry.edges, {
         excludedSpellNames: solvedSpellNames,
+        requiredAttributeValues: getRequiredAttributeValuesForAppliedKeys([entry]),
       }) > 0,
     });
     setGameStatus("paused");
@@ -893,6 +1012,7 @@ function CasterPage() {
     }
 
     setDrawnEdges(new Set(pendingKeyConflict.key.edges));
+    setAppliedHintKeys([pendingKeyConflict.key]);
     setRevealedSpellName(null);
     setPendingKeyConflict(null);
     beginResumeCountdown();
@@ -966,6 +1086,8 @@ function CasterPage() {
           history={castHistory}
           discoveredKeys={discoveredKeys}
           canApplyKeys={canInteractWithBoard}
+          canApplyDiscoveredKey={getCanApplyDiscoveredKey}
+          isAppliedDiscoveredKey={getIsAppliedDiscoveredKey}
           onApplyKey={handleApplyDiscoveredKey}
         />
 

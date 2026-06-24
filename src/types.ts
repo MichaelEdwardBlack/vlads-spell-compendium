@@ -33,6 +33,7 @@ export type SpellAttributeValueByAttribute = {
 
 export type Spell = SpellAttributeValueByAttribute & {
   name: string;
+  link: string;
 };
 
 export type SpellwritingAttributeDefinition<Attribute extends SpellAttribute = SpellAttribute> = {

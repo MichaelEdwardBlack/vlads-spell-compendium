@@ -3,6 +3,7 @@ import type { MouseEvent } from "react";
 import { BookOpen, ChevronDown, Grid3X3, Pause, Play, RotateCcw, Wand2 } from "lucide-react";
 import { GlyphBoard } from "./components/GlyphBoard";
 import { GlyphDiagram } from "./components/GlyphDiagram";
+import { SpellDetailsLink } from "./components/SpellDetailsLink";
 import { formatSpellLevel } from "./components/SpellResult";
 import { AttributeKeysPage } from "./pages/AttributeKeysPage";
 import { SpellGalleryPage } from "./pages/SpellGalleryPage";
@@ -317,6 +318,7 @@ function SpellRewardPanel({
           <h2 id="pause-modal-title" className="font-display text-2xl font-semibold text-[var(--text-title)]">
             {reward.spell.name}
           </h2>
+          <SpellDetailsLink spell={reward.spell} className="mt-3" />
           <p className="mt-1 text-sm text-[var(--text-muted)]">
             Pick one eligible attribute key to add to your hint glyphs.
           </p>
@@ -544,6 +546,9 @@ function CastHistoryPanel({ history }: { history: readonly CastHistoryEntry[] })
                     </dd>
                   </div>
                 ))}
+                <div className="pt-1">
+                  <SpellDetailsLink spell={entry.spell} />
+                </div>
               </dl>
             </details>
           ))

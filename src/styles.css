@@ -276,7 +276,8 @@ button {
 
 .hint-choice-button,
 .discovered-key-button,
-.round-control-button {
+.round-control-button,
+.spell-details-link {
   outline-color: var(--accent-gold);
 }
 
@@ -288,9 +289,16 @@ button {
 
 .hint-choice-button:hover,
 .discovered-key-button:hover:not(:disabled),
-.round-control-button:hover:not(:disabled) {
+.round-control-button:hover:not(:disabled),
+.spell-details-link:hover {
   background: color-mix(in srgb, var(--bg-node-hover) 28%, transparent);
   border-color: var(--border-strong);
+}
+
+.spell-details-link {
+  background: color-mix(in srgb, var(--bg-node) 62%, transparent);
+  border-color: var(--border-soft);
+  color: var(--text-title);
 }
 
 .round-control-button {

@@ -3,6 +3,7 @@ import type { Spell } from "../types";
 export const SPELLS = [
   {
     name: "Acid Splash",
+    link: "https://dnd5e.wikidot.com/spell:acid-splash",
     level: 0,
     school: "Conjuration",
     damageOrCondition: "Acid",
@@ -12,6 +13,7 @@ export const SPELLS = [
   },
   {
     name: "Blade Ward",
+    link: "https://dnd5e.wikidot.com/spell:blade-ward",
     level: 0,
     school: "Abjuration",
     damageOrCondition: "Ward",
@@ -21,6 +23,7 @@ export const SPELLS = [
   },
   {
     name: "Booming Blade",
+    link: "https://dnd5e.wikidot.com/spell:booming-blade",
     level: 0,
     school: "Evocation",
     damageOrCondition: "Thunder",
@@ -30,6 +33,7 @@ export const SPELLS = [
   },
   {
     name: "Chill Touch",
+    link: "https://dnd5e.wikidot.com/spell:chill-touch",
     level: 0,
     school: "Necromancy",
     damageOrCondition: "Necrotic",
@@ -39,6 +43,7 @@ export const SPELLS = [
   },
   {
     name: "Control Flames",
+    link: "https://dnd5e.wikidot.com/spell:control-flames",
     level: 0,
     school: "Transmutation",
     damageOrCondition: "None",
@@ -48,6 +53,7 @@ export const SPELLS = [
   },
   {
     name: "Dancing Lights",
+    link: "https://dnd5e.wikidot.com/spell:dancing-lights",
     level: 0,
     school: "Evocation",
     damageOrCondition: "None",
@@ -57,6 +63,7 @@ export const SPELLS = [
   },
   {
     name: "Fire Bolt",
+    link: "https://dnd5e.wikidot.com/spell:fire-bolt",
     level: 0,
     school: "Evocation",
     damageOrCondition: "Fire",
@@ -66,6 +73,7 @@ export const SPELLS = [
   },
   {
     name: "Friends",
+    link: "https://dnd5e.wikidot.com/spell:friends",
     level: 0,
     school: "Enchantment",
     damageOrCondition: "None",
@@ -75,6 +83,7 @@ export const SPELLS = [
   },
   {
     name: "Frostbite",
+    link: "https://dnd5e.wikidot.com/spell:frostbite",
     level: 0,
     school: "Evocation",
     damageOrCondition: "Disadvantage",
@@ -84,6 +93,7 @@ export const SPELLS = [
   },
   {
     name: "Green-Flame Blade",
+    link: "https://dnd5e.wikidot.com/spell:green-flame-blade",
     level: 0,
     school: "Evocation",
     damageOrCondition: "Fire",
@@ -93,6 +103,7 @@ export const SPELLS = [
   },
   {
     name: "Gust",
+    link: "https://dnd5e.wikidot.com/spell:gust",
     level: 0,
     school: "Transmutation",
     damageOrCondition: "None",
@@ -102,6 +113,7 @@ export const SPELLS = [
   },
   {
     name: "Infestation",
+    link: "https://dnd5e.wikidot.com/spell:infestation",
     level: 0,
     school: "Conjuration",
     damageOrCondition: "Poison",
@@ -111,6 +123,7 @@ export const SPELLS = [
   },
   {
     name: "Light",
+    link: "https://dnd5e.wikidot.com/spell:light",
     level: 0,
     school: "Evocation",
     damageOrCondition: "None",
@@ -120,6 +133,7 @@ export const SPELLS = [
   },
   {
     name: "Lightning Lure",
+    link: "https://dnd5e.wikidot.com/spell:lightning-lure",
     level: 0,
     school: "Evocation",
     damageOrCondition: "Lightning",
@@ -129,6 +143,7 @@ export const SPELLS = [
   },
   {
     name: "Mage Hand",
+    link: "https://dnd5e.wikidot.com/spell:mage-hand",
     level: 0,
     school: "Conjuration",
     damageOrCondition: "None",
@@ -138,6 +153,7 @@ export const SPELLS = [
   },
   {
     name: "Mending",
+    link: "https://dnd5e.wikidot.com/spell:mending",
     level: 0,
     school: "Transmutation",
     damageOrCondition: "Healing",
@@ -147,6 +163,7 @@ export const SPELLS = [
   },
   {
     name: "Message",
+    link: "https://dnd5e.wikidot.com/spell:message",
     level: 0,
     school: "Transmutation",
     damageOrCondition: "None",
@@ -156,6 +173,7 @@ export const SPELLS = [
   },
   {
     name: "Mind Sliver",
+    link: "https://dnd5e.wikidot.com/spell:mind-sliver",
     level: 0,
     school: "Enchantment",
     damageOrCondition: "Psychic",
@@ -165,6 +183,7 @@ export const SPELLS = [
   },
   {
     name: "Minor Illusion",
+    link: "https://dnd5e.wikidot.com/spell:minor-illusion",
     level: 0,
     school: "Illusion",
     damageOrCondition: "None",
@@ -183,6 +202,7 @@ export const SPELLS = [
   // },
   {
     name: "Poison Spray",
+    link: "https://dnd5e.wikidot.com/spell:poison-spray",
     level: 0,
     school: "Conjuration",
     damageOrCondition: "Poison",
@@ -192,6 +212,7 @@ export const SPELLS = [
   },
   {
     name: "Prestidigitation",
+    link: "https://dnd5e.wikidot.com/spell:prestidigitation",
     level: 0,
     school: "Transmutation",
     damageOrCondition: "None",
@@ -201,6 +222,7 @@ export const SPELLS = [
   },
   {
     name: "Ray of Frost",
+    link: "https://dnd5e.wikidot.com/spell:ray-of-frost",
     level: 0,
     school: "Evocation",
     damageOrCondition: "Cold",
@@ -210,6 +232,7 @@ export const SPELLS = [
   },
   {
     name: "Shape Water",
+    link: "https://dnd5e.wikidot.com/spell:shape-water",
     level: 0,
     school: "Transmutation",
     damageOrCondition: "None",
@@ -219,6 +242,7 @@ export const SPELLS = [
   },
   {
     name: "Shocking Grasp",
+    link: "https://dnd5e.wikidot.com/spell:shocking-grasp",
     level: 0,
     school: "Evocation",
     damageOrCondition: "Lightning",
@@ -228,6 +252,7 @@ export const SPELLS = [
   },
   {
     name: "Sword Burst",
+    link: "https://dnd5e.wikidot.com/spell:sword-burst",
     level: 0,
     school: "Conjuration",
     damageOrCondition: "Force",
@@ -237,6 +262,7 @@ export const SPELLS = [
   },
   {
     name: "Thunderclap",
+    link: "https://dnd5e.wikidot.com/spell:thunderclap",
     level: 0,
     school: "Evocation",
     damageOrCondition: "Thunder",
@@ -246,6 +272,7 @@ export const SPELLS = [
   },
   {
     name: "Toll the Dead",
+    link: "https://dnd5e.wikidot.com/spell:toll-the-dead",
     level: 0,
     school: "Necromancy",
     damageOrCondition: "Necrotic",
@@ -255,6 +282,7 @@ export const SPELLS = [
   },
   {
     name: "True Strike",
+    link: "https://dnd5e.wikidot.com/spell:true-strike",
     level: 0,
     school: "Divination",
     damageOrCondition: "None",
@@ -264,6 +292,7 @@ export const SPELLS = [
   },
   {
     name: "Absorb Elements",
+    link: "https://dnd5e.wikidot.com/spell:absorb-elements",
     level: 1,
     school: "Abjuration",
     damageOrCondition: "Ward",
@@ -273,6 +302,7 @@ export const SPELLS = [
   },
   {
     name: "Alarm",
+    link: "https://dnd5e.wikidot.com/spell:alarm",
     level: 1,
     school: "Abjuration",
     damageOrCondition: "None",
@@ -282,6 +312,7 @@ export const SPELLS = [
   },
   {
     name: "Burning Hands",
+    link: "https://dnd5e.wikidot.com/spell:burning-hands",
     level: 1,
     school: "Evocation",
     damageOrCondition: "Fire",
@@ -291,6 +322,7 @@ export const SPELLS = [
   },
   {
     name: "Catapult",
+    link: "https://dnd5e.wikidot.com/spell:catapult",
     level: 1,
     school: "Transmutation",
     damageOrCondition: "Bludgeoning",
@@ -300,6 +332,7 @@ export const SPELLS = [
   },
   {
     name: "Cause Fear",
+    link: "https://dnd5e.wikidot.com/spell:cause-fear",
     level: 1,
     school: "Necromancy",
     damageOrCondition: "Frightened",
@@ -309,6 +342,7 @@ export const SPELLS = [
   },
   {
     name: "Charm Person",
+    link: "https://dnd5e.wikidot.com/spell:charm-person",
     level: 1,
     school: "Enchantment",
     damageOrCondition: "Charmed",
@@ -318,15 +352,17 @@ export const SPELLS = [
   },
   {
     name: "Chromatic Orb",
+    link: "https://dnd5e.wikidot.com/spell:chromatic-orb",
     level: 1,
     school: "Evocation",
-    damageOrCondition: "Acid, Cold, Fire, Lighting, Poison, or Thunder",
+    damageOrCondition: "Acid, Cold, Fire, Lightning, Poison, or Thunder",
     area: "Sphere",
     range: "90 feet",
     duration: "Instantaneous",
   },
   {
     name: "Color Spray",
+    link: "https://dnd5e.wikidot.com/spell:color-spray",
     level: 1,
     school: "Illusion",
     damageOrCondition: "Blinded",
@@ -336,6 +372,7 @@ export const SPELLS = [
   },
   {
     name: "Comprehend Languages",
+    link: "https://dnd5e.wikidot.com/spell:comprehend-languages",
     level: 1,
     school: "Divination",
     damageOrCondition: "None",
@@ -354,6 +391,7 @@ export const SPELLS = [
   // },
   {
     name: "Detect Magic",
+    link: "https://dnd5e.wikidot.com/spell:detect-magic",
     level: 1,
     school: "Divination",
     damageOrCondition: "None",
@@ -363,6 +401,7 @@ export const SPELLS = [
   },
   {
     name: "Disguise Self",
+    link: "https://dnd5e.wikidot.com/spell:disguise-self",
     level: 1,
     school: "Illusion",
     damageOrCondition: "None",
@@ -372,6 +411,7 @@ export const SPELLS = [
   },
   {
     name: "Distort Value",
+    link: "https://dnd5e.wikidot.com/spell:distort-value",
     level: 1,
     school: "Illusion",
     damageOrCondition: "None",
@@ -381,6 +421,7 @@ export const SPELLS = [
   },
   {
     name: "Earth Tremor",
+    link: "https://dnd5e.wikidot.com/spell:earth-tremor",
     level: 1,
     school: "Evocation",
     damageOrCondition: "Bludgeoning",
@@ -390,6 +431,7 @@ export const SPELLS = [
   },
   {
     name: "Expeditious Retreat",
+    link: "https://dnd5e.wikidot.com/spell:expeditious-retreat",
     level: 1,
     school: "Transmutation",
     damageOrCondition: "None",
@@ -399,6 +441,7 @@ export const SPELLS = [
   },
   {
     name: "False Life",
+    link: "https://dnd5e.wikidot.com/spell:false-life",
     level: 1,
     school: "Necromancy",
     damageOrCondition: "Healing",
@@ -408,6 +451,7 @@ export const SPELLS = [
   },
   {
     name: "Feather Fall",
+    link: "https://dnd5e.wikidot.com/spell:feather-fall",
     level: 1,
     school: "Transmutation",
     damageOrCondition: "None",
@@ -417,6 +461,7 @@ export const SPELLS = [
   },
   {
     name: "Find Familiar",
+    link: "https://dnd5e.wikidot.com/spell:find-familiar",
     level: 1,
     school: "Conjuration",
     damageOrCondition: "None",
@@ -426,6 +471,7 @@ export const SPELLS = [
   },
   {
     name: "Fog Cloud",
+    link: "https://dnd5e.wikidot.com/spell:fog-cloud",
     level: 1,
     school: "Conjuration",
     damageOrCondition: "None",
@@ -435,6 +481,7 @@ export const SPELLS = [
   },
   {
     name: "Frost Fingers",
+    link: "https://dnd5e.wikidot.com/spell:frost-fingers",
     level: 1,
     school: "Evocation",
     damageOrCondition: "Cold",
@@ -443,16 +490,8 @@ export const SPELLS = [
     duration: "Instantaneous",
   },
   {
-    name: "Gift of Alacrity",
-    level: 1,
-    school: "Divination",
-    damageOrCondition: "None",
-    area: "Single target",
-    range: "Touch",
-    duration: "8 hours",
-  },
-  {
     name: "Grease",
+    link: "https://dnd5e.wikidot.com/spell:grease",
     level: 1,
     school: "Conjuration",
     damageOrCondition: "None",
@@ -462,6 +501,7 @@ export const SPELLS = [
   },
   {
     name: "Ice Knife",
+    link: "https://dnd5e.wikidot.com/spell:ice-knife",
     level: 1,
     school: "Conjuration",
     damageOrCondition: "Cold and Piercing",
@@ -471,6 +511,7 @@ export const SPELLS = [
   },
   {
     name: "Identify",
+    link: "https://dnd5e.wikidot.com/spell:identify",
     level: 1,
     school: "Divination",
     damageOrCondition: "None",
@@ -480,6 +521,7 @@ export const SPELLS = [
   },
   {
     name: "Illusory Script",
+    link: "https://dnd5e.wikidot.com/spell:illusory-script",
     level: 1,
     school: "Illusion",
     damageOrCondition: "None",
@@ -498,6 +540,7 @@ export const SPELLS = [
   // },
   {
     name: "Jump",
+    link: "https://dnd5e.wikidot.com/spell:jump",
     level: 1,
     school: "Transmutation",
     damageOrCondition: "Buff",
@@ -507,6 +550,7 @@ export const SPELLS = [
   },
   {
     name: "Longstrider",
+    link: "https://dnd5e.wikidot.com/spell:longstrider",
     level: 1,
     school: "Transmutation",
     damageOrCondition: "Buff",
@@ -516,6 +560,7 @@ export const SPELLS = [
   },
   {
     name: "Mage Armor",
+    link: "https://dnd5e.wikidot.com/spell:mage-armor",
     level: 1,
     school: "Abjuration",
     damageOrCondition: "Ward",
@@ -525,6 +570,7 @@ export const SPELLS = [
   },
   {
     name: "Magic Missile",
+    link: "https://dnd5e.wikidot.com/spell:magic-missile",
     level: 1,
     school: "Evocation", // 111
     damageOrCondition: "Force", // 1
@@ -533,16 +579,8 @@ export const SPELLS = [
     duration: "Instantaneous", // 0
   },
   {
-    name: "Magnify Gravity",
-    level: 1,
-    school: "Transmutation",
-    damageOrCondition: "Force",
-    area: "Sphere",
-    range: "60 feet",
-    duration: "1 round",
-  },
-  {
     name: "Protection from Evil and Good",
+    link: "https://dnd5e.wikidot.com/spell:protection-from-evil-and-good",
     level: 1,
     school: "Abjuration",
     damageOrCondition: "Ward",
@@ -552,6 +590,7 @@ export const SPELLS = [
   },
   {
     name: "Ray of Sickness",
+    link: "https://dnd5e.wikidot.com/spell:ray-of-sickness",
     level: 1,
     school: "Necromancy",
     damageOrCondition: "Poison",
@@ -561,6 +600,7 @@ export const SPELLS = [
   },
   {
     name: "Shield",
+    link: "https://dnd5e.wikidot.com/spell:shield",
     level: 1,
     school: "Abjuration",
     damageOrCondition: "Buff",
@@ -570,6 +610,7 @@ export const SPELLS = [
   },
   {
     name: "Silent Image",
+    link: "https://dnd5e.wikidot.com/spell:silent-image",
     level: 1,
     school: "Illusion",
     damageOrCondition: "None",
@@ -579,6 +620,7 @@ export const SPELLS = [
   },
   {
     name: "Silvery Barbs",
+    link: "https://dnd5e.wikidot.com/spell:silvery-barbs",
     level: 1,
     school: "Enchantment",
     damageOrCondition: "Disadvantage",
@@ -588,6 +630,7 @@ export const SPELLS = [
   },
   {
     name: "Sleep",
+    link: "https://dnd5e.wikidot.com/spell:sleep",
     level: 1,
     school: "Enchantment",
     damageOrCondition: "Unconscious",
@@ -597,6 +640,7 @@ export const SPELLS = [
   },
   {
     name: "Snare",
+    link: "https://dnd5e.wikidot.com/spell:snare",
     level: 1,
     school: "Abjuration",
     damageOrCondition: "None",
@@ -606,6 +650,7 @@ export const SPELLS = [
   },
   {
     name: "Tasha's Caustic Brew",
+    link: "https://dnd5e.wikidot.com/spell:tashas-caustic-brew",
     level: 1,
     school: "Evocation",
     damageOrCondition: "Acid",
@@ -615,6 +660,7 @@ export const SPELLS = [
   },
   {
     name: "Tasha's Hideous Laughter",
+    link: "https://dnd5e.wikidot.com/spell:tashas-hideous-laughter",
     level: 1,
     school: "Enchantment",
     damageOrCondition: "Incapacitated",
@@ -623,7 +669,8 @@ export const SPELLS = [
     duration: "1 minute",
   },
   {
-    name: "Tener's Floating Disk",
+    name: "Tenser's Floating Disk",
+    link: "https://dnd5e.wikidot.com/spell:tensers-floating-disk",
     level: 1,
     school: "Conjuration",
     damageOrCondition: "None",
@@ -633,6 +680,7 @@ export const SPELLS = [
   },
   {
     name: "Thunderwave",
+    link: "https://dnd5e.wikidot.com/spell:thunderwave",
     level: 1,
     school: "Evocation",
     damageOrCondition: "Thunder",
@@ -642,6 +690,7 @@ export const SPELLS = [
   },
   {
     name: "Unseen Servant",
+    link: "https://dnd5e.wikidot.com/spell:unseen-servant",
     level: 1,
     school: "Conjuration",
     damageOrCondition: "None",
@@ -651,6 +700,7 @@ export const SPELLS = [
   },
   {
     name: "Witch Bolt",
+    link: "https://dnd5e.wikidot.com/spell:witch-bolt",
     level: 1,
     school: "Evocation",
     damageOrCondition: "Lightning",
@@ -660,6 +710,7 @@ export const SPELLS = [
   },
   {
     name: "Aganazzar's Scorcher",
+    link: "https://dnd5e.wikidot.com/spell:aganazzars-scorcher",
     level: 2,
     school: "Evocation",
     damageOrCondition: "Fire",
@@ -669,6 +720,7 @@ export const SPELLS = [
   },
   {
     name: "Air Bubble",
+    link: "https://dnd5e.wikidot.com/spell:air-bubble",
     level: 2,
     school: "Conjuration",
     damageOrCondition: "None",
@@ -678,6 +730,7 @@ export const SPELLS = [
   },
   {
     name: "Alter Self",
+    link: "https://dnd5e.wikidot.com/spell:alter-self",
     level: 2,
     school: "Transmutation",
     damageOrCondition: "None",
@@ -687,6 +740,7 @@ export const SPELLS = [
   },
   {
     name: "Arcane Lock",
+    link: "https://dnd5e.wikidot.com/spell:arcane-lock",
     level: 2,
     school: "Abjuration",
     damageOrCondition: "None",
@@ -696,6 +750,7 @@ export const SPELLS = [
   },
   {
     name: "Augury",
+    link: "https://dnd5e.wikidot.com/spell:augury",
     level: 2,
     school: "Divination",
     damageOrCondition: "None",
@@ -705,6 +760,7 @@ export const SPELLS = [
   },
   {
     name: "Blindness/Deafness",
+    link: "https://dnd5e.wikidot.com/spell:blindness-deafness",
     level: 2,
     school: "Necromancy",
     damageOrCondition: "Blinded or Deafened",
@@ -714,6 +770,7 @@ export const SPELLS = [
   },
   {
     name: "Blur",
+    link: "https://dnd5e.wikidot.com/spell:blur",
     level: 2,
     school: "Illusion",
     damageOrCondition: "Ward",
@@ -723,6 +780,7 @@ export const SPELLS = [
   },
   {
     name: "Borrowed Knowledge",
+    link: "https://dnd5e.wikidot.com/spell:borrowed-knowledge",
     level: 2,
     school: "Divination",
     damageOrCondition: "None",
@@ -732,6 +790,7 @@ export const SPELLS = [
   },
   {
     name: "Cloud of Daggers",
+    link: "https://dnd5e.wikidot.com/spell:cloud-of-daggers",
     level: 2,
     school: "Conjuration",
     damageOrCondition: "Slashing",
@@ -741,6 +800,7 @@ export const SPELLS = [
   },
   {
     name: "Continual Flame",
+    link: "https://dnd5e.wikidot.com/spell:continual-flame",
     level: 2,
     school: "Evocation",
     damageOrCondition: "None",
@@ -750,6 +810,7 @@ export const SPELLS = [
   },
   {
     name: "Crown of Madness",
+    link: "https://dnd5e.wikidot.com/spell:crown-of-madness",
     level: 2,
     school: "Enchantment",
     damageOrCondition: "Charmed",
@@ -759,6 +820,7 @@ export const SPELLS = [
   },
   {
     name: "Darkness",
+    link: "https://dnd5e.wikidot.com/spell:darkness",
     level: 2,
     school: "Evocation",
     damageOrCondition: "Blinded",
@@ -768,6 +830,7 @@ export const SPELLS = [
   },
   {
     name: "Darkvision",
+    link: "https://dnd5e.wikidot.com/spell:darkvision",
     level: 2,
     school: "Transmutation",
     damageOrCondition: "Buff",
@@ -777,6 +840,7 @@ export const SPELLS = [
   },
   {
     name: "Detect Thoughts",
+    link: "https://dnd5e.wikidot.com/spell:detect-thoughts",
     level: 2,
     school: "Divination",
     damageOrCondition: "None",
@@ -786,6 +850,7 @@ export const SPELLS = [
   },
   {
     name: "Dragon's Breath",
+    link: "https://dnd5e.wikidot.com/spell:dragons-breath",
     level: 2,
     school: "Transmutation",
     damageOrCondition: "Acid, Cold, Fire, Lightning, or Poison",
@@ -795,6 +860,7 @@ export const SPELLS = [
   },
   {
     name: "Dust Devil",
+    link: "https://dnd5e.wikidot.com/spell:dust-devil",
     level: 2,
     school: "Conjuration",
     damageOrCondition: "Bludgeoning",
@@ -804,6 +870,7 @@ export const SPELLS = [
   },
   {
     name: "Earthbind",
+    link: "https://dnd5e.wikidot.com/spell:earthbind",
     level: 2,
     school: "Transmutation",
     damageOrCondition: "None",
@@ -813,6 +880,7 @@ export const SPELLS = [
   },
   {
     name: "Enhance Ability",
+    link: "https://dnd5e.wikidot.com/spell:enhance-ability",
     level: 2,
     school: "Transmutation",
     damageOrCondition: "Buff",
@@ -822,6 +890,7 @@ export const SPELLS = [
   },
   {
     name: "Enlarge/Reduce",
+    link: "https://dnd5e.wikidot.com/spell:enlarge-reduce",
     level: 2,
     school: "Transmutation",
     damageOrCondition: "None",
@@ -831,6 +900,7 @@ export const SPELLS = [
   },
   {
     name: "Flaming Sphere",
+    link: "https://dnd5e.wikidot.com/spell:flaming-sphere",
     level: 2,
     school: "Conjuration",
     damageOrCondition: "Fire",
@@ -840,6 +910,7 @@ export const SPELLS = [
   },
   {
     name: "Flock of Familiars",
+    link: "https://dnd5e.wikidot.com/spell:flock-of-familiars",
     level: 2,
     school: "Conjuration",
     damageOrCondition: "None",
@@ -848,16 +919,8 @@ export const SPELLS = [
     duration: "1 hour",
   },
   {
-    name: "Fortune's Favor",
-    level: 2,
-    school: "Divination",
-    damageOrCondition: "None",
-    area: "Single target",
-    range: "60 feet",
-    duration: "1 hour",
-  },
-  {
     name: "Gentle Repose",
+    link: "https://dnd5e.wikidot.com/spell:gentle-repose",
     level: 2,
     school: "Necromancy",
     damageOrCondition: "Ward",
@@ -867,6 +930,7 @@ export const SPELLS = [
   },
   {
     name: "Gift of Gab",
+    link: "https://dnd5e.wikidot.com/spell:gift-of-gab",
     level: 2,
     school: "Enchantment",
     damageOrCondition: "None",
@@ -876,6 +940,7 @@ export const SPELLS = [
   },
   {
     name: "Gust of Wind",
+    link: "https://dnd5e.wikidot.com/spell:gust-of-wind",
     level: 2,
     school: "Evocation",
     damageOrCondition: "None",
@@ -885,6 +950,7 @@ export const SPELLS = [
   },
   {
     name: "Hold Person",
+    link: "https://dnd5e.wikidot.com/spell:hold-person",
     level: 2,
     school: "Enchantment",
     damageOrCondition: "Paralyzed",
@@ -892,18 +958,9 @@ export const SPELLS = [
     range: "60 feet",
     duration: "1 minute",
   },
-  //  Immovable Object has the same signature as Enhance Ability
-  // {
-  //   name: "Immovable Object",
-  //   level: 2,
-  //   school: "Transmutation",
-  //   damageOrCondition: "None",
-  //   area: "Single target",
-  //   range: "Touch",
-  //   duration: "1 hour",
-  // },
   {
     name: "Invisibility",
+    link: "https://dnd5e.wikidot.com/spell:invisibility",
     level: 2,
     school: "Illusion",
     damageOrCondition: "Invisible",
@@ -913,6 +970,7 @@ export const SPELLS = [
   },
   {
     name: "Kinetic Jaunt",
+    link: "https://dnd5e.wikidot.com/spell:kinetic-jaunt",
     level: 2,
     school: "Transmutation",
     damageOrCondition: "None",
@@ -922,6 +980,7 @@ export const SPELLS = [
   },
   {
     name: "Knock",
+    link: "https://dnd5e.wikidot.com/spell:knock",
     level: 2,
     school: "Transmutation",
     damageOrCondition: "None",
@@ -931,6 +990,7 @@ export const SPELLS = [
   },
   {
     name: "Levitate",
+    link: "https://dnd5e.wikidot.com/spell:levitate",
     level: 2,
     school: "Transmutation",
     damageOrCondition: "None",
@@ -940,6 +1000,7 @@ export const SPELLS = [
   },
   {
     name: "Locate Object",
+    link: "https://dnd5e.wikidot.com/spell:locate-object",
     level: 2,
     school: "Divination",
     damageOrCondition: "None",
@@ -949,6 +1010,7 @@ export const SPELLS = [
   },
   {
     name: "Magic Mouth",
+    link: "https://dnd5e.wikidot.com/spell:magic-mouth",
     level: 2,
     school: "Illusion",
     damageOrCondition: "None",
@@ -958,6 +1020,7 @@ export const SPELLS = [
   },
   {
     name: "Magic Weapon",
+    link: "https://dnd5e.wikidot.com/spell:magic-weapon",
     level: 2,
     school: "Transmutation",
     damageOrCondition: "None",
@@ -967,6 +1030,7 @@ export const SPELLS = [
   },
   {
     name: "Maximillian's Earthen Grasp",
+    link: "https://dnd5e.wikidot.com/spell:maximillians-earthen-grasp",
     level: 2,
     school: "Transmutation",
     damageOrCondition: "Bludgeoning",
@@ -976,6 +1040,7 @@ export const SPELLS = [
   },
   {
     name: "Melf's Acid Arrow",
+    link: "https://dnd5e.wikidot.com/spell:melfs-acid-arrow",
     level: 2,
     school: "Evocation",
     damageOrCondition: "Acid",
@@ -985,6 +1050,7 @@ export const SPELLS = [
   },
   {
     name: "Mind Spike",
+    link: "https://dnd5e.wikidot.com/spell:mind-spike",
     level: 2,
     school: "Divination",
     damageOrCondition: "Psychic",
@@ -994,6 +1060,7 @@ export const SPELLS = [
   },
   {
     name: "Mirror Image",
+    link: "https://dnd5e.wikidot.com/spell:mirror-image",
     level: 2,
     school: "Illusion",
     damageOrCondition: "Negation", // to distinguish between blur
@@ -1003,6 +1070,7 @@ export const SPELLS = [
   },
   {
     name: "Misty Step",
+    link: "https://dnd5e.wikidot.com/spell:misty-step",
     level: 2,
     school: "Conjuration",
     damageOrCondition: "Teleportation",
@@ -1012,6 +1080,7 @@ export const SPELLS = [
   },
   {
     name: "Nathair's Mischief",
+    link: "https://dnd5e.wikidot.com/spell:nathairs-mischief",
     level: 2,
     school: "Illusion",
     damageOrCondition: "Charmed, Blinded, or Incapacitated",
@@ -1021,6 +1090,7 @@ export const SPELLS = [
   },
   {
     name: "Nystul's Magic Aura",
+    link: "https://dnd5e.wikidot.com/spell:nystuls-magic-aura",
     level: 2,
     school: "Illusion",
     damageOrCondition: "None",
@@ -1030,6 +1100,7 @@ export const SPELLS = [
   },
   {
     name: "Phantasmal Force",
+    link: "https://dnd5e.wikidot.com/spell:phantasmal-force",
     level: 2,
     school: "Illusion",
     damageOrCondition: "None",
@@ -1039,6 +1110,7 @@ export const SPELLS = [
   },
   {
     name: "Pyrotechnics",
+    link: "https://dnd5e.wikidot.com/spell:pyrotechnics",
     level: 2,
     school: "Transmutation",
     damageOrCondition: "Blinded",
@@ -1048,6 +1120,7 @@ export const SPELLS = [
   },
   {
     name: "Ray of Enfeeblement",
+    link: "https://dnd5e.wikidot.com/spell:ray-of-enfeeblement",
     level: 2,
     school: "Necromancy",
     damageOrCondition: "Negation",
@@ -1057,6 +1130,7 @@ export const SPELLS = [
   },
   {
     name: "Rime's Binding Ice",
+    link: "https://dnd5e.wikidot.com/spell:rimes-binding-ice",
     level: 2,
     school: "Evocation",
     damageOrCondition: "Cold",
@@ -1066,6 +1140,7 @@ export const SPELLS = [
   },
   {
     name: "Rope Trick",
+    link: "https://dnd5e.wikidot.com/spell:rope-trick",
     level: 2,
     school: "Transmutation",
     damageOrCondition: "None",
@@ -1075,6 +1150,7 @@ export const SPELLS = [
   },
   {
     name: "Scorching Ray",
+    link: "https://dnd5e.wikidot.com/spell:scorching-ray",
     level: 2,
     school: "Evocation",
     damageOrCondition: "Fire",
@@ -1084,6 +1160,7 @@ export const SPELLS = [
   },
   {
     name: "See Invisibility",
+    link: "https://dnd5e.wikidot.com/spell:see-invisibility",
     level: 2,
     school: "Divination",
     damageOrCondition: "None",
@@ -1093,6 +1170,7 @@ export const SPELLS = [
   },
   {
     name: "Shadow Blade",
+    link: "https://dnd5e.wikidot.com/spell:shadow-blade",
     level: 2,
     school: "Illusion",
     damageOrCondition: "Psychic",
@@ -1102,6 +1180,7 @@ export const SPELLS = [
   },
   {
     name: "Shatter",
+    link: "https://dnd5e.wikidot.com/spell:shatter",
     level: 2,
     school: "Evocation",
     damageOrCondition: "Thunder",
@@ -1111,6 +1190,7 @@ export const SPELLS = [
   },
   {
     name: "Skywrite",
+    link: "https://dnd5e.wikidot.com/spell:skywrite",
     level: 2,
     school: "Transmutation",
     damageOrCondition: "None",
@@ -1120,6 +1200,7 @@ export const SPELLS = [
   },
   {
     name: "Snilloc's Snowball Swarm",
+    link: "https://dnd5e.wikidot.com/spell:snillocs-snowball-swarm",
     level: 2,
     school: "Evocation",
     damageOrCondition: "Cold",
@@ -1129,6 +1210,7 @@ export const SPELLS = [
   },
   {
     name: "Spider Climb",
+    link: "https://dnd5e.wikidot.com/spell:spider-climb",
     level: 2,
     school: "Transmutation",
     damageOrCondition: "Buff",
@@ -1138,6 +1220,7 @@ export const SPELLS = [
   },
   {
     name: "Spray of Cards",
+    link: "https://dnd5e.wikidot.com/spell:spray-of-cards",
     level: 2,
     school: "Conjuration",
     damageOrCondition: "Force",
@@ -1147,6 +1230,7 @@ export const SPELLS = [
   },
   {
     name: "Suggestion",
+    link: "https://dnd5e.wikidot.com/spell:suggestion",
     level: 2,
     school: "Enchantment",
     damageOrCondition: "None",
@@ -1156,6 +1240,7 @@ export const SPELLS = [
   },
   {
     name: "Tasha's Mind Whip",
+    link: "https://dnd5e.wikidot.com/spell:tashas-mind-whip",
     level: 2,
     school: "Enchantment",
     damageOrCondition: "Psychic",
@@ -1165,6 +1250,7 @@ export const SPELLS = [
   },
   {
     name: "Vortex Warp",
+    link: "https://dnd5e.wikidot.com/spell:vortex-warp",
     level: 2,
     school: "Conjuration",
     damageOrCondition: "Teleportation",
@@ -1174,6 +1260,7 @@ export const SPELLS = [
   },
   {
     name: "Warding Wind",
+    link: "https://dnd5e.wikidot.com/spell:warding-wind",
     level: 2,
     school: "Evocation",
     damageOrCondition: "Ward",
@@ -1183,6 +1270,7 @@ export const SPELLS = [
   },
   {
     name: "Warp Sense",
+    link: "https://dnd5e.wikidot.com/spell:warp-sense",
     level: 2,
     school: "Divination",
     damageOrCondition: "None",
@@ -1192,6 +1280,7 @@ export const SPELLS = [
   },
   {
     name: "Web",
+    link: "https://dnd5e.wikidot.com/spell:web",
     level: 2,
     school: "Conjuration",
     damageOrCondition: "Restrained",
@@ -1201,6 +1290,7 @@ export const SPELLS = [
   },
   {
     name: "Wither and Bloom",
+    link: "https://dnd5e.wikidot.com/spell:wither-and-bloom",
     level: 2,
     school: "Necromancy",
     damageOrCondition: "Necrotic",
@@ -1209,16 +1299,8 @@ export const SPELLS = [
     duration: "Instantaneous",
   },
   {
-    name: "Wristpocket",
-    level: 2,
-    school: "Conjuration",
-    damageOrCondition: "Teleportation",
-    area: "Single target",
-    range: "Self",
-    duration: "1 hour",
-  },
-  {
     name: "Animate Dead",
+    link: "https://dnd5e.wikidot.com/spell:animate-dead",
     level: 3,
     school: "Necromancy",
     damageOrCondition: "None",
@@ -1228,6 +1310,7 @@ export const SPELLS = [
   },
   {
     name: "Antagonize",
+    link: "https://dnd5e.wikidot.com/spell:antagonize",
     level: 3,
     school: "Enchantment",
     damageOrCondition: "Psychic",
@@ -1237,6 +1320,7 @@ export const SPELLS = [
   },
   {
     name: "Ashardalon's Stride",
+    link: "https://dnd5e.wikidot.com/spell:ashardalons-stride",
     level: 3,
     school: "Transmutation",
     damageOrCondition: "Fire",
@@ -1246,6 +1330,7 @@ export const SPELLS = [
   },
   {
     name: "Bestow Curse",
+    link: "https://dnd5e.wikidot.com/spell:bestow-curse",
     level: 3,
     school: "Necromancy",
     damageOrCondition: "Necrotic",
@@ -1255,6 +1340,7 @@ export const SPELLS = [
   },
   {
     name: "Blink",
+    link: "https://dnd5e.wikidot.com/spell:blink",
     level: 3,
     school: "Transmutation",
     damageOrCondition: "None",
@@ -1264,6 +1350,7 @@ export const SPELLS = [
   },
   {
     name: "Catnap",
+    link: "https://dnd5e.wikidot.com/spell:catnap",
     level: 3,
     school: "Enchantment",
     damageOrCondition: "None",
@@ -1273,6 +1360,7 @@ export const SPELLS = [
   },
   {
     name: "Clairvoyance",
+    link: "https://dnd5e.wikidot.com/spell:clairvoyance",
     level: 3,
     school: "Divination",
     damageOrCondition: "None",
@@ -1282,6 +1370,7 @@ export const SPELLS = [
   },
   {
     name: "Counterspell",
+    link: "https://dnd5e.wikidot.com/spell:counterspell",
     level: 3,
     school: "Abjuration",
     damageOrCondition: "Negation",
@@ -1291,6 +1380,7 @@ export const SPELLS = [
   },
   {
     name: "Dispel Magic",
+    link: "https://dnd5e.wikidot.com/spell:dispel-magic",
     level: 3,
     school: "Abjuration",
     damageOrCondition: "Negation",
@@ -1300,6 +1390,7 @@ export const SPELLS = [
   },
   {
     name: "Enemies Abound",
+    link: "https://dnd5e.wikidot.com/spell:enemies-abound",
     level: 3,
     school: "Enchantment",
     damageOrCondition: "Frightened",
@@ -1309,6 +1400,7 @@ export const SPELLS = [
   },
   {
     name: "Erupting Earth",
+    link: "https://dnd5e.wikidot.com/spell:erupting-earth",
     level: 3,
     school: "Transmutation",
     damageOrCondition: "Bludgeoning",
@@ -1318,6 +1410,7 @@ export const SPELLS = [
   },
   {
     name: "Fast Friends",
+    link: "https://dnd5e.wikidot.com/spell:fast-friends",
     level: 3,
     school: "Enchantment",
     damageOrCondition: "Charmed",
@@ -1327,6 +1420,7 @@ export const SPELLS = [
   },
   {
     name: "Fear",
+    link: "https://dnd5e.wikidot.com/spell:fear",
     level: 3,
     school: "Illusion",
     damageOrCondition: "Frightened",
@@ -1336,6 +1430,7 @@ export const SPELLS = [
   },
   {
     name: "Feign Death",
+    link: "https://dnd5e.wikidot.com/spell:feign-death",
     level: 3,
     school: "Necromancy",
     damageOrCondition: "None",
@@ -1345,6 +1440,7 @@ export const SPELLS = [
   },
   {
     name: "Fireball",
+    link: "https://dnd5e.wikidot.com/spell:fireball",
     level: 3,
     school: "Evocation",
     damageOrCondition: "Fire",
@@ -1354,6 +1450,7 @@ export const SPELLS = [
   },
   {
     name: "Flame Arrows",
+    link: "https://dnd5e.wikidot.com/spell:flame-arrows",
     level: 3,
     school: "Transmutation",
     damageOrCondition: "Fire",
@@ -1363,6 +1460,7 @@ export const SPELLS = [
   },
   {
     name: "Fly",
+    link: "https://dnd5e.wikidot.com/spell:fly",
     level: 3,
     school: "Transmutation",
     damageOrCondition: "Buff",
@@ -1372,6 +1470,7 @@ export const SPELLS = [
   },
   {
     name: "Galder's Tower",
+    link: "https://dnd5e.wikidot.com/spell:galders-tower",
     level: 3,
     school: "Conjuration",
     damageOrCondition: "None",
@@ -1380,7 +1479,8 @@ export const SPELLS = [
     duration: "24 hours",
   },
   {
-    name: "Gaseaous Form",
+    name: "Gaseous Form",
+    link: "https://dnd5e.wikidot.com/spell:gaseous-form",
     level: 3,
     school: "Transmutation",
     damageOrCondition: "Buff",
@@ -1390,6 +1490,7 @@ export const SPELLS = [
   },
   {
     name: "Haste",
+    link: "https://dnd5e.wikidot.com/spell:haste",
     level: 3,
     school: "Transmutation",
     damageOrCondition: "Buff",
@@ -1399,6 +1500,7 @@ export const SPELLS = [
   },
   {
     name: "Hypnotic Pattern",
+    link: "https://dnd5e.wikidot.com/spell:hypnotic-pattern",
     level: 3,
     school: "Illusion",
     damageOrCondition: "Charmed",
@@ -1408,6 +1510,7 @@ export const SPELLS = [
   },
   {
     name: "Incite Greed",
+    link: "https://dnd5e.wikidot.com/spell:incite-greed",
     level: 3,
     school: "Enchantment",
     damageOrCondition: "Charmed",
@@ -1417,6 +1520,7 @@ export const SPELLS = [
   },
   {
     name: "Intellect Fortress",
+    link: "https://dnd5e.wikidot.com/spell:intellect-fortress",
     level: 3,
     school: "Abjuration",
     damageOrCondition: "Advantage",
@@ -1426,6 +1530,7 @@ export const SPELLS = [
   },
   {
     name: "Leomund's Tiny Hut",
+    link: "https://dnd5e.wikidot.com/spell:leomunds-tiny-hut",
     level: 3,
     school: "Evocation",
     damageOrCondition: "None",
@@ -1435,6 +1540,7 @@ export const SPELLS = [
   },
   {
     name: "Life Transference",
+    link: "https://dnd5e.wikidot.com/spell:life-transference",
     level: 3,
     school: "Necromancy",
     damageOrCondition: "Healing",
@@ -1444,6 +1550,7 @@ export const SPELLS = [
   },
   {
     name: "Lightning Bolt",
+    link: "https://dnd5e.wikidot.com/spell:lightning-bolt",
     level: 3,
     school: "Evocation",
     damageOrCondition: "Lightning",
@@ -1453,6 +1560,7 @@ export const SPELLS = [
   },
   {
     name: "Magic Circle",
+    link: "https://dnd5e.wikidot.com/spell:magic-circle",
     level: 3,
     school: "Abjuration",
     damageOrCondition: "Ward",
@@ -1462,6 +1570,7 @@ export const SPELLS = [
   },
   {
     name: "Major Image",
+    link: "https://dnd5e.wikidot.com/spell:major-image",
     level: 3,
     school: "Illusion",
     damageOrCondition: "None",
@@ -1471,6 +1580,7 @@ export const SPELLS = [
   },
   {
     name: "Melf's Minute Meteors",
+    link: "https://dnd5e.wikidot.com/spell:melfs-minute-meteors",
     level: 3,
     school: "Evocation",
     damageOrCondition: "Fire",
@@ -1480,6 +1590,7 @@ export const SPELLS = [
   },
   {
     name: "Nondetection",
+    link: "https://dnd5e.wikidot.com/spell:nondetection",
     level: 3,
     school: "Abjuration",
     damageOrCondition: "None",
@@ -1489,6 +1600,7 @@ export const SPELLS = [
   },
   {
     name: "Phantom Steed",
+    link: "https://dnd5e.wikidot.com/spell:phantom-steed",
     level: 3,
     school: "Illusion",
     damageOrCondition: "None",
@@ -1498,6 +1610,7 @@ export const SPELLS = [
   },
   {
     name: "Protection from Energy",
+    link: "https://dnd5e.wikidot.com/spell:protection-from-energy",
     level: 3,
     school: "Abjuration",
     damageOrCondition: "Ward",
@@ -1506,16 +1619,8 @@ export const SPELLS = [
     duration: "1 hour",
   },
   {
-    name: "Pulse Wave",
-    level: 3,
-    school: "Evocation",
-    damageOrCondition: "Force",
-    area: "Cone",
-    range: "Self",
-    duration: "Instantaneous",
-  },
-  {
     name: "Remove Curse",
+    link: "https://dnd5e.wikidot.com/spell:remove-curse",
     level: 3,
     school: "Abjuration",
     damageOrCondition: "Negation",
@@ -1525,6 +1630,7 @@ export const SPELLS = [
   },
   {
     name: "Sending",
+    link: "https://dnd5e.wikidot.com/spell:sending",
     level: 3,
     school: "Evocation",
     damageOrCondition: "None",
@@ -1534,6 +1640,7 @@ export const SPELLS = [
   },
   {
     name: "Sleet Storm",
+    link: "https://dnd5e.wikidot.com/spell:sleet-storm",
     level: 3,
     school: "Conjuration",
     damageOrCondition: "None",
@@ -1543,6 +1650,7 @@ export const SPELLS = [
   },
   {
     name: "Slow",
+    link: "https://dnd5e.wikidot.com/spell:slow",
     level: 3,
     school: "Transmutation",
     damageOrCondition: "None",
@@ -1552,6 +1660,7 @@ export const SPELLS = [
   },
   {
     name: "Speak with Dead",
+    link: "https://dnd5e.wikidot.com/spell:speak-with-dead",
     level: 3,
     school: "Necromancy",
     damageOrCondition: "None",
@@ -1561,6 +1670,7 @@ export const SPELLS = [
   },
   {
     name: "Spirit Shroud",
+    link: "https://dnd5e.wikidot.com/spell:spirit-shroud",
     level: 3,
     school: "Necromancy",
     damageOrCondition: "Radiant, Necrotic, or Cold",
@@ -1570,6 +1680,7 @@ export const SPELLS = [
   },
   {
     name: "Stinking Cloud",
+    link: "https://dnd5e.wikidot.com/spell:stinking-cloud",
     level: 3,
     school: "Conjuration",
     damageOrCondition: "Poison",
@@ -1579,6 +1690,7 @@ export const SPELLS = [
   },
   {
     name: "Summon Fey",
+    link: "https://dnd5e.wikidot.com/spell:summon-fey",
     level: 3,
     school: "Conjuration",
     damageOrCondition: "Force and Piercing",
@@ -1588,6 +1700,7 @@ export const SPELLS = [
   },
   {
     name: "Summon Lesser Demons",
+    link: "https://dnd5e.wikidot.com/spell:summon-lesser-demons",
     level: 3,
     school: "Conjuration",
     damageOrCondition: "None",
@@ -1597,6 +1710,7 @@ export const SPELLS = [
   },
   {
     name: "Summon Shadowspawn",
+    link: "https://dnd5e.wikidot.com/spell:summon-shadowspawn",
     level: 3,
     school: "Conjuration",
     damageOrCondition: "Cold",
@@ -1606,6 +1720,7 @@ export const SPELLS = [
   },
   {
     name: "Summon Undead",
+    link: "https://dnd5e.wikidot.com/spell:summon-undead",
     level: 3,
     school: "Necromancy",
     damageOrCondition: "None",
@@ -1615,6 +1730,7 @@ export const SPELLS = [
   },
   {
     name: "Thunder Step",
+    link: "https://dnd5e.wikidot.com/spell:thunder-step",
     level: 3,
     school: "Conjuration",
     damageOrCondition: "Thunder",
@@ -1624,6 +1740,7 @@ export const SPELLS = [
   },
   {
     name: "Tidal Wave",
+    link: "https://dnd5e.wikidot.com/spell:tidal-wave",
     level: 3,
     school: "Conjuration",
     damageOrCondition: "Bludgeoning",
@@ -1633,6 +1750,7 @@ export const SPELLS = [
   },
   {
     name: "Tiny Servant",
+    link: "https://dnd5e.wikidot.com/spell:tiny-servant",
     level: 3,
     school: "Transmutation",
     damageOrCondition: "None",
@@ -1642,6 +1760,7 @@ export const SPELLS = [
   },
   {
     name: "Tongues",
+    link: "https://dnd5e.wikidot.com/spell:tongues",
     level: 3,
     school: "Divination",
     damageOrCondition: "None",
@@ -1651,6 +1770,7 @@ export const SPELLS = [
   },
   {
     name: "Wall of Sand",
+    link: "https://dnd5e.wikidot.com/spell:wall-of-sand",
     level: 3,
     school: "Evocation",
     damageOrCondition: "Blinded",
@@ -1660,6 +1780,7 @@ export const SPELLS = [
   },
   {
     name: "Wall of Water",
+    link: "https://dnd5e.wikidot.com/spell:wall-of-water",
     level: 3,
     school: "Evocation",
     damageOrCondition: "Ward",
@@ -1669,6 +1790,7 @@ export const SPELLS = [
   },
   {
     name: "Water Breathing",
+    link: "https://dnd5e.wikidot.com/spell:water-breathing",
     level: 3,
     school: "Transmutation",
     damageOrCondition: "Buff",
@@ -1678,6 +1800,7 @@ export const SPELLS = [
   },
   {
     name: "Arcane Eye",
+    link: "https://dnd5e.wikidot.com/spell:arcane-eye",
     level: 4,
     school: "Divination",
     damageOrCondition: "None",
@@ -1687,6 +1810,7 @@ export const SPELLS = [
   },
   {
     name: "Banishment",
+    link: "https://dnd5e.wikidot.com/spell:banishment",
     level: 4,
     school: "Abjuration",
     damageOrCondition: "None",
@@ -1696,6 +1820,7 @@ export const SPELLS = [
   },
   {
     name: "Blight",
+    link: "https://dnd5e.wikidot.com/spell:blight",
     level: 4,
     school: "Necromancy",
     damageOrCondition: "Necrotic",
@@ -1705,6 +1830,7 @@ export const SPELLS = [
   },
   {
     name: "Charm Monster",
+    link: "https://dnd5e.wikidot.com/spell:charm-monster",
     level: 4,
     school: "Enchantment",
     damageOrCondition: "Charmed",
@@ -1714,6 +1840,7 @@ export const SPELLS = [
   },
   {
     name: "Confusion",
+    link: "https://dnd5e.wikidot.com/spell:confusion",
     level: 4,
     school: "Enchantment",
     damageOrCondition: "None",
@@ -1723,6 +1850,7 @@ export const SPELLS = [
   },
   {
     name: "Conjure Minor Elementals",
+    link: "https://dnd5e.wikidot.com/spell:conjure-minor-elementals",
     level: 4,
     school: "Conjuration",
     damageOrCondition: "None",
@@ -1732,6 +1860,7 @@ export const SPELLS = [
   },
   {
     name: "Control Water",
+    link: "https://dnd5e.wikidot.com/spell:control-water",
     level: 4,
     school: "Necromancy",
     damageOrCondition: "None",
@@ -1741,6 +1870,7 @@ export const SPELLS = [
   },
   {
     name: "Dimension Door",
+    link: "https://dnd5e.wikidot.com/spell:dimension-door",
     level: 4,
     school: "Conjuration",
     damageOrCondition: "None",
@@ -1750,6 +1880,7 @@ export const SPELLS = [
   },
   {
     name: "Divination",
+    link: "https://dnd5e.wikidot.com/spell:divination",
     level: 4,
     school: "Divination",
     damageOrCondition: "None",
@@ -1759,6 +1890,7 @@ export const SPELLS = [
   },
   {
     name: "Elemental Bane",
+    link: "https://dnd5e.wikidot.com/spell:elemental-bane",
     level: 4,
     school: "Transmutation",
     damageOrCondition: "Acid, Cold, Fire, Lightning, or Thunder",
@@ -1767,7 +1899,8 @@ export const SPELLS = [
     duration: "1 minute",
   },
   {
-    name: "Evards Black Tentacles",
+    name: "Evard's Black Tentacles",
+    link: "https://dnd5e.wikidot.com/spell:evards-black-tentacles",
     level: 4,
     school: "Conjuration",
     damageOrCondition: "Bludgeoning",
@@ -1777,6 +1910,7 @@ export const SPELLS = [
   },
   {
     name: "Fabricate",
+    link: "https://dnd5e.wikidot.com/spell:fabricate",
     level: 4,
     school: "Transmutation",
     damageOrCondition: "None",
@@ -1786,6 +1920,7 @@ export const SPELLS = [
   },
   {
     name: "Fire Shield",
+    link: "https://dnd5e.wikidot.com/spell:fire-shield",
     level: 5,
     school: "Evocation",
     damageOrCondition: "Fire or Cold",
@@ -1794,7 +1929,8 @@ export const SPELLS = [
     duration: "10 minutes",
   },
   {
-    name: "Glader's Speedy Courier",
+    name: "Galder's Speedy Courier",
+    link: "https://dnd5e.wikidot.com/spell:galders-speedy-courier",
     level: 4,
     school: "Conjuration",
     damageOrCondition: "None",
@@ -1804,6 +1940,7 @@ export const SPELLS = [
   },
   {
     name: "Gate Seal",
+    link: "https://dnd5e.wikidot.com/spell:gate-seal",
     level: 4,
     school: "Abjuration",
     damageOrCondition: "None",
@@ -1813,6 +1950,7 @@ export const SPELLS = [
   },
   {
     name: "Greater Invisibility",
+    link: "https://dnd5e.wikidot.com/spell:greater-invisibility",
     level: 4,
     school: "Illusion",
     damageOrCondition: "Invisible",
@@ -1822,6 +1960,7 @@ export const SPELLS = [
   },
   {
     name: "Hallucinatory Terrain",
+    link: "https://dnd5e.wikidot.com/spell:hallucinatory-terrain",
     level: 4,
     school: "Illusion",
     damageOrCondition: "None",
@@ -1831,6 +1970,7 @@ export const SPELLS = [
   },
   {
     name: "Ice Storm",
+    link: "https://dnd5e.wikidot.com/spell:ice-storm",
     level: 4,
     school: "Evocation",
     damageOrCondition: "Cold and Bludgeoning",
@@ -1840,6 +1980,7 @@ export const SPELLS = [
   },
   {
     name: "Leomund's Secret Chest",
+    link: "https://dnd5e.wikidot.com/spell:leomunds-secret-chest",
     level: 4,
     school: "Conjuration",
     damageOrCondition: "None",
@@ -1849,6 +1990,7 @@ export const SPELLS = [
   },
   {
     name: "Locate Creature",
+    link: "https://dnd5e.wikidot.com/spell:locate-creature",
     level: 4,
     school: "Divination",
     damageOrCondition: "None",
@@ -1858,6 +2000,7 @@ export const SPELLS = [
   },
   {
     name: "Mordenkainen's Faithful Hound",
+    link: "https://dnd5e.wikidot.com/spell:mordenkainens-faithful-hound",
     level: 4,
     school: "Conjuration",
     damageOrCondition: "Piercing",
@@ -1866,7 +2009,8 @@ export const SPELLS = [
     duration: "8 hours",
   },
   {
-    name: "Modenkainen's Private Sanctum",
+    name: "Mordenkainen's Private Sanctum",
+    link: "https://dnd5e.wikidot.com/spell:mordenkainens-private-sanctum",
     level: 4,
     school: "Abjuration",
     damageOrCondition: "Ward",
@@ -1876,6 +2020,7 @@ export const SPELLS = [
   },
   {
     name: "Otiluke's Resilient Sphere",
+    link: "https://dnd5e.wikidot.com/spell:otilukes-resilient-sphere",
     level: 4,
     school: "Evocation",
     damageOrCondition: "None",
@@ -1885,6 +2030,7 @@ export const SPELLS = [
   },
   {
     name: "Phantasmal Killer",
+    link: "https://dnd5e.wikidot.com/spell:phantasmal-killer",
     level: 4,
     school: "Illusion",
     damageOrCondition: "Psychic",
@@ -1894,6 +2040,7 @@ export const SPELLS = [
   },
   {
     name: "Polymorph",
+    link: "https://dnd5e.wikidot.com/spell:polymorph",
     level: 4,
     school: "Transmutation",
     damageOrCondition: "None",
@@ -1903,6 +2050,7 @@ export const SPELLS = [
   },
   {
     name: "Raulothim's Psychic Lance",
+    link: "https://dnd5e.wikidot.com/spell:raulothims-psychic-lance",
     level: 4,
     school: "Enchantment",
     damageOrCondition: "Psychic",
@@ -1912,6 +2060,7 @@ export const SPELLS = [
   },
   {
     name: "Sickening Radiance",
+    link: "https://dnd5e.wikidot.com/spell:sickening-radiance",
     level: 4,
     school: "Evocation",
     damageOrCondition: "Radiant",
@@ -1921,6 +2070,7 @@ export const SPELLS = [
   },
   {
     name: "Spirit of Death",
+    link: "https://dnd5e.wikidot.com/spell:spirit-of-death",
     level: 4,
     school: "Necromancy",
     damageOrCondition: "Necrotic",
@@ -1930,6 +2080,7 @@ export const SPELLS = [
   },
   {
     name: "Stone Shape",
+    link: "https://dnd5e.wikidot.com/spell:stone-shape",
     level: 4,
     school: "Transmutation",
     damageOrCondition: "None",
@@ -1939,6 +2090,7 @@ export const SPELLS = [
   },
   {
     name: "Stoneskin",
+    link: "https://dnd5e.wikidot.com/spell:stoneskin",
     level: 4,
     school: "Abjuration",
     damageOrCondition: "Buff",
@@ -1947,7 +2099,8 @@ export const SPELLS = [
     duration: "1 hour",
   },
   {
-    name: "Sorm Sphere",
+    name: "Storm Sphere",
+    link: "https://dnd5e.wikidot.com/spell:storm-sphere",
     level: 4,
     school: "Evocation",
     damageOrCondition: "Lightning and Bludgeoning",
@@ -1956,16 +2109,8 @@ export const SPELLS = [
     duration: "1 minute",
   },
   {
-    name: "Fabricate",
-    level: 4,
-    school: "Transmutation",
-    damageOrCondition: "None",
-    area: "Cube",
-    range: "120 feet",
-    duration: "Instantaneous",
-  },
-  {
     name: "Summon Aberration",
+    link: "https://dnd5e.wikidot.com/spell:summon-aberration",
     level: 4,
     school: "Conjuration",
     damageOrCondition: "Psychic",
@@ -1975,6 +2120,7 @@ export const SPELLS = [
   },
   {
     name: "Summon Construct",
+    link: "https://dnd5e.wikidot.com/spell:summon-construct",
     level: 4,
     school: "Conjuration",
     damageOrCondition: "Bludgeoning",
@@ -1984,6 +2130,7 @@ export const SPELLS = [
   },
   {
     name: "Summon Elemental",
+    link: "https://dnd5e.wikidot.com/spell:summon-elemental",
     level: 4,
     school: "Conjuration",
     damageOrCondition: "Fire or Bludgeoning",
@@ -1993,6 +2140,7 @@ export const SPELLS = [
   },
   {
     name: "Summon Greater Demon",
+    link: "https://dnd5e.wikidot.com/spell:summon-greater-demon",
     level: 4,
     school: "Conjuration",
     damageOrCondition: "None",
@@ -2002,6 +2150,7 @@ export const SPELLS = [
   },
   {
     name: "Vitriolic Sphere",
+    link: "https://dnd5e.wikidot.com/spell:vitriolic-sphere",
     level: 4,
     school: "Evocation",
     damageOrCondition: "Acid",
@@ -2011,6 +2160,7 @@ export const SPELLS = [
   },
   {
     name: "Wall of Fire",
+    link: "https://dnd5e.wikidot.com/spell:wall-of-fire",
     level: 4,
     school: "Evocation",
     damageOrCondition: "Fire",
@@ -2020,6 +2170,7 @@ export const SPELLS = [
   },
   {
     name: "Watery Sphere",
+    link: "https://dnd5e.wikidot.com/spell:watery-sphere",
     level: 4,
     school: "Conjuration",
     damageOrCondition: "Restrained",
@@ -2029,6 +2180,7 @@ export const SPELLS = [
   },
   {
     name: "Animate Objects",
+    link: "https://dnd5e.wikidot.com/spell:animate-objects",
     level: 5,
     school: "Transmutation",
     damageOrCondition: "Bludgeoning",
@@ -2038,6 +2190,7 @@ export const SPELLS = [
   },
   {
     name: "Bigby's Hand",
+    link: "https://dnd5e.wikidot.com/spell:bigbys-hand",
     level: 5,
     school: "Evocation",
     damageOrCondition: "Force",
@@ -2047,6 +2200,7 @@ export const SPELLS = [
   },
   {
     name: "Cloudkill",
+    link: "https://dnd5e.wikidot.com/spell:cloudkill",
     level: 5,
     school: "Conjuration",
     damageOrCondition: "Poison",
@@ -2056,6 +2210,7 @@ export const SPELLS = [
   },
   {
     name: "Cone of Cold",
+    link: "https://dnd5e.wikidot.com/spell:cone-of-cold",
     level: 5,
     school: "Evocation",
     damageOrCondition: "Cold",
@@ -2065,6 +2220,7 @@ export const SPELLS = [
   },
   {
     name: "Conjure Elemental",
+    link: "https://dnd5e.wikidot.com/spell:conjure-elemental",
     level: 5,
     school: "Conjuration",
     damageOrCondition: "None",
@@ -2074,6 +2230,7 @@ export const SPELLS = [
   },
   {
     name: "Contact Other Plane",
+    link: "https://dnd5e.wikidot.com/spell:contact-other-plane",
     level: 5,
     school: "Divination",
     damageOrCondition: "Psychic",
@@ -2083,6 +2240,7 @@ export const SPELLS = [
   },
   {
     name: "Control Winds",
+    link: "https://dnd5e.wikidot.com/spell:control-winds",
     level: 5,
     school: "Transmutation",
     damageOrCondition: "None",
@@ -2092,6 +2250,7 @@ export const SPELLS = [
   },
   {
     name: "Creation",
+    link: "https://dnd5e.wikidot.com/spell:creation",
     level: 5,
     school: "Illusion",
     damageOrCondition: "None",
@@ -2101,6 +2260,7 @@ export const SPELLS = [
   },
   {
     name: "Danse Macabre",
+    link: "https://dnd5e.wikidot.com/spell:danse-macabre",
     level: 5,
     school: "Conjuration",
     damageOrCondition: "None",
@@ -2110,6 +2270,7 @@ export const SPELLS = [
   },
   {
     name: "Dawn",
+    link: "https://dnd5e.wikidot.com/spell:dawn",
     level: 5,
     school: "Evocation",
     damageOrCondition: "Radiant",
@@ -2119,6 +2280,7 @@ export const SPELLS = [
   },
   {
     name: "Dominate Person",
+    link: "https://dnd5e.wikidot.com/spell:dominate-person",
     level: 5,
     school: "Enchantment",
     damageOrCondition: "Charmed",
@@ -2128,6 +2290,7 @@ export const SPELLS = [
   },
   {
     name: "Dream",
+    link: "https://dnd5e.wikidot.com/spell:dream",
     level: 5,
     school: "Illusion",
     damageOrCondition: "Psychic",
@@ -2137,6 +2300,7 @@ export const SPELLS = [
   },
   {
     name: "Enervation",
+    link: "https://dnd5e.wikidot.com/spell:enervation",
     level: 5,
     school: "Necromancy",
     damageOrCondition: "Necrotic",
@@ -2146,6 +2310,7 @@ export const SPELLS = [
   },
   {
     name: "Far Step",
+    link: "https://dnd5e.wikidot.com/spell:far-step",
     level: 5,
     school: "Conjuration",
     damageOrCondition: "None",
@@ -2155,6 +2320,7 @@ export const SPELLS = [
   },
   {
     name: "Geas",
+    link: "https://dnd5e.wikidot.com/spell:geas",
     level: 5,
     school: "Enchantment",
     damageOrCondition: "Psychic",
@@ -2164,6 +2330,7 @@ export const SPELLS = [
   },
   {
     name: "Hold Monster",
+    link: "https://dnd5e.wikidot.com/spell:hold-monster",
     level: 5,
     school: "Enchantment",
     damageOrCondition: "Paralyzed",
@@ -2173,6 +2340,7 @@ export const SPELLS = [
   },
   {
     name: "Immolation",
+    link: "https://dnd5e.wikidot.com/spell:immolation",
     level: 5,
     school: "Evocation",
     damageOrCondition: "Fire",
@@ -2182,6 +2350,7 @@ export const SPELLS = [
   },
   {
     name: "Infernal Calling",
+    link: "https://dnd5e.wikidot.com/spell:infernal-calling",
     level: 5,
     school: "Conjuration",
     damageOrCondition: "None",
@@ -2191,6 +2360,7 @@ export const SPELLS = [
   },
   {
     name: "Legend Lore",
+    link: "https://dnd5e.wikidot.com/spell:legend-lore",
     level: 5,
     school: "Divination",
     damageOrCondition: "None",
@@ -2200,6 +2370,7 @@ export const SPELLS = [
   },
   {
     name: "Mislead",
+    link: "https://dnd5e.wikidot.com/spell:mislead",
     level: 5,
     school: "Illusion",
     damageOrCondition: "Invisible",
@@ -2209,6 +2380,7 @@ export const SPELLS = [
   },
   {
     name: "Modify Memory",
+    link: "https://dnd5e.wikidot.com/spell:modify-memory",
     level: 5,
     school: "Enchantment",
     damageOrCondition: "Charmed",
@@ -2218,6 +2390,7 @@ export const SPELLS = [
   },
   {
     name: "Passwall",
+    link: "https://dnd5e.wikidot.com/spell:passwall",
     level: 5,
     school: "Transmutation",
     damageOrCondition: "None",
@@ -2227,6 +2400,7 @@ export const SPELLS = [
   },
   {
     name: "Planar Binding",
+    link: "https://dnd5e.wikidot.com/spell:planar-binding",
     level: 5,
     school: "Abjuration",
     damageOrCondition: "Charmed",
@@ -2236,6 +2410,7 @@ export const SPELLS = [
   },
   {
     name: "Rary's Telepathic Bond",
+    link: "https://dnd5e.wikidot.com/spell:rarys-telepathic-bond",
     level: 5,
     school: "Divination",
     damageOrCondition: "None",
@@ -2245,6 +2420,7 @@ export const SPELLS = [
   },
   {
     name: "Scrying",
+    link: "https://dnd5e.wikidot.com/spell:scrying",
     level: 5,
     school: "Divination",
     damageOrCondition: "None",
@@ -2254,6 +2430,7 @@ export const SPELLS = [
   },
   {
     name: "Seeming",
+    link: "https://dnd5e.wikidot.com/spell:seeming",
     level: 5,
     school: "Illusion",
     damageOrCondition: "None",
@@ -2263,6 +2440,7 @@ export const SPELLS = [
   },
   {
     name: "Skill Empowerment",
+    link: "https://dnd5e.wikidot.com/spell:skill-empowerment",
     level: 5,
     school: "Transmutation",
     damageOrCondition: "Buff",
@@ -2272,6 +2450,7 @@ export const SPELLS = [
   },
   {
     name: "Steel Wind Strike",
+    link: "https://dnd5e.wikidot.com/spell:steel-wind-strike",
     level: 5,
     school: "Conjuration",
     damageOrCondition: "Force",
@@ -2281,6 +2460,7 @@ export const SPELLS = [
   },
   {
     name: "Summon Draconic Spirit",
+    link: "https://dnd5e.wikidot.com/spell:summon-draconic-spirit",
     level: 5,
     school: "Conjuration",
     damageOrCondition: "None",
@@ -2290,6 +2470,7 @@ export const SPELLS = [
   },
   {
     name: "Synaptic Static",
+    link: "https://dnd5e.wikidot.com/spell:synaptic-static",
     level: 5,
     school: "Enchantment",
     damageOrCondition: "Psychic",
@@ -2299,6 +2480,7 @@ export const SPELLS = [
   },
   {
     name: "Telekinesis",
+    link: "https://dnd5e.wikidot.com/spell:telekinesis",
     level: 5,
     school: "Transmutation",
     damageOrCondition: "None",
@@ -2308,6 +2490,7 @@ export const SPELLS = [
   },
   {
     name: "Teleportation Circle",
+    link: "https://dnd5e.wikidot.com/spell:teleportation-circle",
     level: 5,
     school: "Conjuration",
     damageOrCondition: "Teleportation",
@@ -2317,6 +2500,7 @@ export const SPELLS = [
   },
   {
     name: "Transmute Rock",
+    link: "https://dnd5e.wikidot.com/spell:transmute-rock",
     level: 5,
     school: "Transmutation",
     damageOrCondition: "None",
@@ -2326,6 +2510,7 @@ export const SPELLS = [
   },
   {
     name: "Wall of Force",
+    link: "https://dnd5e.wikidot.com/spell:wall-of-force",
     level: 5,
     school: "Evocation",
     damageOrCondition: "None",
@@ -2335,6 +2520,7 @@ export const SPELLS = [
   },
   {
     name: "Wall of Light",
+    link: "https://dnd5e.wikidot.com/spell:wall-of-light",
     level: 5,
     school: "Evocation",
     damageOrCondition: "Radiant",
@@ -2344,6 +2530,7 @@ export const SPELLS = [
   },
   {
     name: "Wall of Stone",
+    link: "https://dnd5e.wikidot.com/spell:wall-of-stone",
     level: 5,
     school: "Evocation",
     damageOrCondition: "None",
@@ -2353,6 +2540,7 @@ export const SPELLS = [
   },
   {
     name: "Arcane Gate",
+    link: "https://dnd5e.wikidot.com/spell:arcane-gate",
     level: 6,
     school: "Conjuration",
     damageOrCondition: "Teleportation",
@@ -2362,6 +2550,7 @@ export const SPELLS = [
   },
   {
     name: "Chain Lightning",
+    link: "https://dnd5e.wikidot.com/spell:chain-lightning",
     level: 6,
     school: "Evocation",
     damageOrCondition: "Lightning",
@@ -2371,6 +2560,7 @@ export const SPELLS = [
   },
   {
     name: "Circle of Death",
+    link: "https://dnd5e.wikidot.com/spell:circle-of-death",
     level: 6,
     school: "Necromancy",
     damageOrCondition: "Necrotic",
@@ -2380,6 +2570,7 @@ export const SPELLS = [
   },
   {
     name: "Contingency",
+    link: "https://dnd5e.wikidot.com/spell:contingency",
     level: 6,
     school: "Evocation",
     damageOrCondition: "None",
@@ -2389,6 +2580,7 @@ export const SPELLS = [
   },
   {
     name: "Create Homunculus",
+    link: "https://dnd5e.wikidot.com/spell:create-homunculus",
     level: 6,
     school: "Transmutation",
     damageOrCondition: "Piercing",
@@ -2398,6 +2590,7 @@ export const SPELLS = [
   },
   {
     name: "Create Undead",
+    link: "https://dnd5e.wikidot.com/spell:create-undead",
     level: 6,
     school: "Necromancy",
     damageOrCondition: "None",
@@ -2407,6 +2600,7 @@ export const SPELLS = [
   },
   {
     name: "Disintegrate",
+    link: "https://dnd5e.wikidot.com/spell:disintegrate",
     level: 6,
     school: "Transmutation",
     damageOrCondition: "Force",
@@ -2416,6 +2610,7 @@ export const SPELLS = [
   },
   {
     name: "Drawmij's Instant Summons",
+    link: "https://dnd5e.wikidot.com/spell:drawmijs-instant-summons",
     level: 6,
     school: "Conjuration",
     damageOrCondition: "None",
@@ -2425,6 +2620,7 @@ export const SPELLS = [
   },
   {
     name: "Eyebite",
+    link: "https://dnd5e.wikidot.com/spell:eyebite",
     level: 6,
     school: "Necromancy",
     damageOrCondition: "None",
@@ -2434,6 +2630,7 @@ export const SPELLS = [
   },
   {
     name: "Fizban's Platinum Shield",
+    link: "https://dnd5e.wikidot.com/spell:fizbans-platinum-shield",
     level: 6,
     school: "Abjuration",
     damageOrCondition: "Buff",
@@ -2443,6 +2640,7 @@ export const SPELLS = [
   },
   {
     name: "Flesh to Stone",
+    link: "https://dnd5e.wikidot.com/spell:flesh-to-stone",
     level: 6,
     school: "Transmutation",
     damageOrCondition: "None",
@@ -2452,6 +2650,7 @@ export const SPELLS = [
   },
   {
     name: "Globe of Invulnerability",
+    link: "https://dnd5e.wikidot.com/spell:globe-of-invulnerability",
     level: 6,
     school: "Abjuration",
     damageOrCondition: "Ward",
@@ -2461,6 +2660,7 @@ export const SPELLS = [
   },
   {
     name: "Guards and Wards",
+    link: "https://dnd5e.wikidot.com/spell:guards-and-wards",
     level: 6,
     school: "Abjuration",
     damageOrCondition: "Ward",
@@ -2470,6 +2670,7 @@ export const SPELLS = [
   },
   {
     name: "Investiture of Flame",
+    link: "https://dnd5e.wikidot.com/spell:investiture-of-flame",
     level: 6,
     school: "Transmutation",
     damageOrCondition: "Fire",
@@ -2479,6 +2680,7 @@ export const SPELLS = [
   },
   {
     name: "Investiture of Ice",
+    link: "https://dnd5e.wikidot.com/spell:investiture-of-ice",
     level: 6,
     school: "Transmutation",
     damageOrCondition: "Cold",
@@ -2488,6 +2690,7 @@ export const SPELLS = [
   },
   {
     name: "Investiture of Stone",
+    link: "https://dnd5e.wikidot.com/spell:investiture-of-stone",
     level: 6,
     school: "Transmutation",
     damageOrCondition: "Buff",
@@ -2497,6 +2700,7 @@ export const SPELLS = [
   },
   {
     name: "Investiture of Wind",
+    link: "https://dnd5e.wikidot.com/spell:investiture-of-wind",
     level: 6,
     school: "Transmutation",
     damageOrCondition: "Bludgeoning",
@@ -2506,6 +2710,7 @@ export const SPELLS = [
   },
   {
     name: "Magic Jar",
+    link: "https://dnd5e.wikidot.com/spell:magic-jar",
     level: 6,
     school: "Necromancy",
     damageOrCondition: "None",
@@ -2515,6 +2720,7 @@ export const SPELLS = [
   },
   {
     name: "Mass Suggestion",
+    link: "https://dnd5e.wikidot.com/spell:mass-suggestion",
     level: 6,
     school: "Enchantment",
     damageOrCondition: "Charmed",
@@ -2524,6 +2730,7 @@ export const SPELLS = [
   },
   {
     name: "Mental Prison",
+    link: "https://dnd5e.wikidot.com/spell:mental-prison",
     level: 6,
     school: "Illusion",
     damageOrCondition: "Psychic",
@@ -2533,6 +2740,7 @@ export const SPELLS = [
   },
   {
     name: "Move Earth",
+    link: "https://dnd5e.wikidot.com/spell:move-earth",
     level: 6,
     school: "Transmutation",
     damageOrCondition: "None",
@@ -2542,6 +2750,7 @@ export const SPELLS = [
   },
   {
     name: "Otiluke's Freezing Sphere",
+    link: "https://dnd5e.wikidot.com/spell:otilukes-freezing-sphere",
     level: 6,
     school: "Evocation",
     damageOrCondition: "Cold",
@@ -2551,6 +2760,7 @@ export const SPELLS = [
   },
   {
     name: "Otto's Irresistible Dance",
+    link: "https://dnd5e.wikidot.com/spell:ottos-irresistible-dance",
     level: 6,
     school: "Enchantment",
     damageOrCondition: "Charmed",
@@ -2560,6 +2770,7 @@ export const SPELLS = [
   },
   {
     name: "Programmed Illusion",
+    link: "https://dnd5e.wikidot.com/spell:programmed-illusion",
     level: 6,
     school: "Illusion",
     damageOrCondition: "None",
@@ -2569,6 +2780,7 @@ export const SPELLS = [
   },
   {
     name: "Scatter",
+    link: "https://dnd5e.wikidot.com/spell:scatter",
     level: 6,
     school: "Conjuration",
     damageOrCondition: "Teleportation",
@@ -2578,6 +2790,7 @@ export const SPELLS = [
   },
   {
     name: "Soul Cage",
+    link: "https://dnd5e.wikidot.com/spell:soul-cage",
     level: 6,
     school: "Necromancy",
     damageOrCondition: "Healing",
@@ -2587,6 +2800,7 @@ export const SPELLS = [
   },
   {
     name: "Summon Fiend",
+    link: "https://dnd5e.wikidot.com/spell:summon-fiend",
     level: 6,
     school: "Conjuration",
     damageOrCondition: "Fire, Necrotic, or Slashing",
@@ -2596,6 +2810,7 @@ export const SPELLS = [
   },
   {
     name: "Sunbeam",
+    link: "https://dnd5e.wikidot.com/spell:sunbeam",
     level: 6,
     school: "Evocation",
     damageOrCondition: "Radiant",
@@ -2604,7 +2819,8 @@ export const SPELLS = [
     duration: "1 minute",
   },
   {
-    name: "Tasha's Otherworldy Guise",
+    name: "Tasha's Otherworldly Guise",
+    link: "https://dnd5e.wikidot.com/spell:tashas-otherworldly-guise",
     level: 6,
     school: "Transmutation",
     damageOrCondition: "Buff",
@@ -2614,6 +2830,7 @@ export const SPELLS = [
   },
   {
     name: "Tenser's Transformation",
+    link: "https://dnd5e.wikidot.com/spell:tensers-transformation",
     level: 6,
     school: "Transmutation",
     damageOrCondition: "Force",
@@ -2623,6 +2840,7 @@ export const SPELLS = [
   },
   {
     name: "True Seeing",
+    link: "https://dnd5e.wikidot.com/spell:true-seeing",
     level: 6,
     school: "Divination",
     damageOrCondition: "None",
@@ -2632,11 +2850,552 @@ export const SPELLS = [
   },
   {
     name: "Wall of Ice",
+    link: "https://dnd5e.wikidot.com/spell:wall-of-ice",
     level: 6,
     school: "Evocation",
     damageOrCondition: "Cold",
     area: "Wall",
     range: "120 feet",
     duration: "10 minutes",
+  },
+  {
+    name: "Create Magen",
+    link: "https://dnd5e.wikidot.com/spell:create-magen",
+    level: 7,
+    school: "Transmutation",
+    damageOrCondition: "None",
+    area: "Single target",
+    range: "Touch",
+    duration: "Instantaneous",
+  },
+  {
+    name: "Crown of Stars",
+    link: "https://dnd5e.wikidot.com/spell:crown-of-stars",
+    level: 7,
+    school: "Evocation",
+    damageOrCondition: "Radiant",
+    area: "Self",
+    range: "Self",
+    duration: "1 hour",
+  },
+  {
+    name: "Delayed Blast Fireball",
+    link: "https://dnd5e.wikidot.com/spell:delayed-blast-fireball",
+    level: 7,
+    school: "Evocation",
+    damageOrCondition: "Fire",
+    area: "Sphere",
+    range: "150 feet",
+    duration: "1 minute",
+  },
+  {
+    name: "Draconic Transformation",
+    link: "https://dnd5e.wikidot.com/spell:draconic-transformation",
+    level: 7,
+    school: "Transmutation",
+    damageOrCondition: "Force",
+    area: "Cone",
+    range: "Self",
+    duration: "1 minute",
+  },
+  {
+    name: "Dream of the Blue Veil",
+    link: "https://dnd5e.wikidot.com/spell:dream-of-the-blue-veil",
+    level: 7,
+    school: "Conjuration",
+    damageOrCondition: "Teleportation",
+    area: "Multi-target",
+    range: "20 feet",
+    duration: "6 hours",
+  },
+  {
+    name: "Etherealness",
+    link: "https://dnd5e.wikidot.com/spell:etherealness",
+    level: 7,
+    school: "Transmutation",
+    damageOrCondition: "Teleportation",
+    area: "Self",
+    range: "Self",
+    duration: "8 hours",
+  },
+  {
+    name: "Finger of Death",
+    link: "https://dnd5e.wikidot.com/spell:finger-of-death",
+    level: 7,
+    school: "Necromancy",
+    damageOrCondition: "Necrotic",
+    area: "Single target",
+    range: "60 feet",
+    duration: "Instantaneous",
+  },
+  {
+    name: "Forcecage",
+    link: "https://dnd5e.wikidot.com/spell:forcecage",
+    level: 7,
+    school: "Evocation",
+    damageOrCondition: "Ward",
+    area: "Cube",
+    range: "100 feet",
+    duration: "1 hour",
+  },
+  {
+    name: "Mirage Arcane",
+    link: "https://dnd5e.wikidot.com/spell:mirage-arcane",
+    level: 7,
+    school: "Illusion",
+    damageOrCondition: "None",
+    area: "Square",
+    range: "Sight",
+    duration: "10 days",
+  },
+  {
+    name: "Mordenkainen's Magnificent Mansion",
+    link: "https://dnd5e.wikidot.com/spell:mordenkainens-magnificent-mansion",
+    level: 7,
+    school: "Conjuration",
+    damageOrCondition: "None",
+    area: "Point",
+    range: "300 feet",
+    duration: "24 hours",
+  },
+  {
+    name: "Mordenkainen's Sword",
+    link: "https://dnd5e.wikidot.com/spell:mordenkainens-sword",
+    level: 7,
+    school: "Evocation",
+    damageOrCondition: "Force",
+    area: "Point",
+    range: "60 feet",
+    duration: "1 minute",
+  },
+  {
+    name: "Plane Shift",
+    link: "https://dnd5e.wikidot.com/spell:plane-shift",
+    level: 7,
+    school: "Conjuration",
+    damageOrCondition: "Teleportation",
+    area: "Multi-target",
+    range: "Touch",
+    duration: "Instantaneous",
+  },
+  {
+    name: "Power Word: Pain",
+    link: "https://dnd5e.wikidot.com/spell:power-word-pain",
+    level: 7,
+    school: "Enchantment",
+    damageOrCondition: "Disadvantage",
+    area: "Single target",
+    range: "60 feet",
+    duration: "Instantaneous",
+  },
+  {
+    name: "Prismatic Spray",
+    link: "https://dnd5e.wikidot.com/spell:prismatic-spray",
+    level: 7,
+    school: "Evocation",
+    damageOrCondition: "Acid, Cold, Fire, Lightning, or Poison",
+    area: "Cone",
+    range: "Self",
+    duration: "Instantaneous",
+  },
+  {
+    name: "Project Image",
+    link: "https://dnd5e.wikidot.com/spell:project-image",
+    level: 7,
+    school: "Illusion",
+    damageOrCondition: "None",
+    area: "Self",
+    range: "500 miles",
+    duration: "24 hours",
+  },
+  {
+    name: "Reverse Gravity",
+    link: "https://dnd5e.wikidot.com/spell:reverse-gravity",
+    level: 7,
+    school: "Transmutation",
+    damageOrCondition: "None",
+    area: "Cylinder",
+    range: "100 feet",
+    duration: "1 minute",
+  },
+  {
+    name: "Sequester",
+    link: "https://dnd5e.wikidot.com/spell:sequester",
+    level: 7,
+    school: "Transmutation",
+    damageOrCondition: "Invisible",
+    area: "Single target",
+    range: "Touch",
+    duration: "Until dispelled",
+  },
+  {
+    name: "Simulacrum",
+    link: "https://dnd5e.wikidot.com/spell:simulacrum",
+    level: 7,
+    school: "Illusion",
+    damageOrCondition: "None",
+    area: "Single target",
+    range: "Touch",
+    duration: "Until dispelled",
+  },
+  {
+    name: "Symbol",
+    link: "https://dnd5e.wikidot.com/spell:symbol",
+    level: 7,
+    school: "Abjuration",
+    damageOrCondition: "Charmed, Frightened, or Stunned",
+    area: "Single target",
+    range: "Touch",
+    duration: "Until dispelled",
+  },
+  {
+    name: "Teleport",
+    link: "https://dnd5e.wikidot.com/spell:teleport",
+    level: 7,
+    school: "Conjuration",
+    damageOrCondition: "Teleportation",
+    area: "Multi-target",
+    range: "10 feet",
+    duration: "Instantaneous",
+  },
+  {
+    name: "Whirlwind",
+    link: "https://dnd5e.wikidot.com/spell:whirlwind",
+    level: 7,
+    school: "Evocation",
+    damageOrCondition: "Bludgeoning",
+    area: "Cylinder",
+    range: "300 feet",
+    duration: "1 minute",
+  },
+  {
+    name: "Abi-Dalzim's Horrid Wilting",
+    link: "https://dnd5e.wikidot.com/spell:abi-dalzims-horrid-wilting",
+    level: 8,
+    school: "Necromancy",
+    damageOrCondition: "Necrotic",
+    area: "Cube",
+    range: "150 feet",
+    duration: "Instantaneous",
+  },
+  {
+    name: "Antimagic Field",
+    link: "https://dnd5e.wikidot.com/spell:antimagic-field",
+    level: 8,
+    school: "Abjuration",
+    damageOrCondition: "Negation",
+    area: "Sphere",
+    range: "Self",
+    duration: "1 hour",
+  },
+  {
+    name: "Antipathy/Sympathy",
+    link: "https://dnd5e.wikidot.com/spell:antipathy-sympathy",
+    level: 8,
+    school: "Enchantment",
+    damageOrCondition: "Charmed or Frightened",
+    area: "Single target",
+    range: "60 feet",
+    duration: "10 days",
+  },
+  {
+    name: "Clone",
+    link: "https://dnd5e.wikidot.com/spell:clone",
+    level: 8,
+    school: "Necromancy",
+    damageOrCondition: "None",
+    area: "Single target",
+    range: "Touch",
+    duration: "Instantaneous",
+  },
+  {
+    name: "Control Weather",
+    link: "https://dnd5e.wikidot.com/spell:control-weather",
+    level: 8,
+    school: "Transmutation",
+    damageOrCondition: "None",
+    area: "Sphere",
+    range: "Self",
+    duration: "8 hours",
+  },
+  {
+    name: "Demiplane",
+    link: "https://dnd5e.wikidot.com/spell:demiplane",
+    level: 8,
+    school: "Conjuration",
+    damageOrCondition: "Teleportation",
+    area: "Point",
+    range: "60 feet",
+    duration: "1 hour",
+  },
+  {
+    name: "Dominate Monster",
+    link: "https://dnd5e.wikidot.com/spell:dominate-monster",
+    level: 8,
+    school: "Enchantment",
+    damageOrCondition: "Charmed",
+    area: "Single target",
+    range: "60 feet",
+    duration: "1 hour",
+  },
+  {
+    name: "Feeblemind",
+    link: "https://dnd5e.wikidot.com/spell:feeblemind",
+    level: 8,
+    school: "Enchantment",
+    damageOrCondition: "Psychic",
+    area: "Single target",
+    range: "150 feet",
+    duration: "Instantaneous",
+  },
+  {
+    name: "Illusory Dragon",
+    link: "https://dnd5e.wikidot.com/spell:illusory-dragon",
+    level: 8,
+    school: "Illusion",
+    damageOrCondition: "Psychic",
+    area: "Point",
+    range: "120 feet",
+    duration: "1 minute",
+  },
+  {
+    name: "Incendiary Cloud",
+    link: "https://dnd5e.wikidot.com/spell:incendiary-cloud",
+    level: 8,
+    school: "Conjuration",
+    damageOrCondition: "Fire",
+    area: "Sphere",
+    range: "150 feet",
+    duration: "1 minute",
+  },
+  {
+    name: "Maddening Darkness",
+    link: "https://dnd5e.wikidot.com/spell:maddening-darkness",
+    level: 8,
+    school: "Evocation",
+    damageOrCondition: "Psychic",
+    area: "Sphere",
+    range: "150 feet",
+    duration: "10 minutes",
+  },
+  {
+    name: "Maze",
+    link: "https://dnd5e.wikidot.com/spell:maze",
+    level: 8,
+    school: "Conjuration",
+    damageOrCondition: "Teleportation",
+    area: "Single target",
+    range: "60 feet",
+    duration: "10 minutes",
+  },
+  {
+    name: "Mighty Fortress",
+    link: "https://dnd5e.wikidot.com/spell:mighty-fortress",
+    level: 8,
+    school: "Conjuration",
+    damageOrCondition: "None",
+    area: "Cube",
+    range: "1 mile",
+    duration: "Instantaneous",
+  },
+  {
+    name: "Mind Blank",
+    link: "https://dnd5e.wikidot.com/spell:mind-blank",
+    level: 8,
+    school: "Abjuration",
+    damageOrCondition: "Ward",
+    area: "Single target",
+    range: "Touch",
+    duration: "24 hours",
+  },
+  {
+    name: "Power Word: Stun",
+    link: "https://dnd5e.wikidot.com/spell:power-word-stun",
+    level: 8,
+    school: "Enchantment",
+    damageOrCondition: "Stunned",
+    area: "Single target",
+    range: "60 feet",
+    duration: "Instantaneous",
+  },
+  {
+    name: "Sunburst",
+    link: "https://dnd5e.wikidot.com/spell:sunburst",
+    level: 8,
+    school: "Evocation",
+    damageOrCondition: "Radiant",
+    area: "Sphere",
+    range: "150 feet",
+    duration: "Instantaneous",
+  },
+  {
+    name: "Telepathy",
+    link: "https://dnd5e.wikidot.com/spell:telepathy",
+    level: 8,
+    school: "Evocation",
+    damageOrCondition: "None",
+    area: "Single target",
+    range: "Unlimited",
+    duration: "24 hours",
+  },
+  {
+    name: "Astral Projection",
+    link: "https://dnd5e.wikidot.com/spell:astral-projection",
+    level: 9,
+    school: "Evocation",
+    damageOrCondition: "Teleportation",
+    area: "Multi-target",
+    range: "10 feet",
+    duration: "Special",
+  },
+  {
+    name: "Blade of Disaster",
+    link: "https://dnd5e.wikidot.com/spell:blade-of-disaster",
+    level: 9,
+    school: "Conjuration",
+    damageOrCondition: "Force",
+    area: "Point",
+    range: "60 feet",
+    duration: "1 minute",
+  },
+  {
+    name: "Foresight",
+    link: "https://dnd5e.wikidot.com/spell:foresight",
+    level: 9,
+    school: "Divination",
+    damageOrCondition: "Advantage",
+    area: "Single target",
+    range: "Touch",
+    duration: "8 hours",
+  },
+  {
+    name: "Gate",
+    link: "https://dnd5e.wikidot.com/spell:gate",
+    level: 9,
+    school: "Conjuration",
+    damageOrCondition: "Teleportation",
+    area: "Point",
+    range: "60 feet",
+    duration: "1 minute",
+  },
+  {
+    name: "Imprisonment",
+    link: "https://dnd5e.wikidot.com/spell:imprisonment",
+    level: 9,
+    school: "Abjuration",
+    damageOrCondition: "Restrained",
+    area: "Single target",
+    range: "30 feet",
+    duration: "Until dispelled",
+  },
+  {
+    name: "Invulnerability",
+    link: "https://dnd5e.wikidot.com/spell:invulnerability",
+    level: 9,
+    school: "Abjuration",
+    damageOrCondition: "Ward",
+    area: "Self",
+    range: "Self",
+    duration: "10 minutes",
+  },
+  {
+    name: "Mass Polymorph",
+    link: "https://dnd5e.wikidot.com/spell:mass-polymorph",
+    level: 9,
+    school: "Transmutation",
+    damageOrCondition: "None",
+    area: "Multi-target",
+    range: "120 feet",
+    duration: "1 hour",
+  },
+  {
+    name: "Meteor Swarm",
+    link: "https://dnd5e.wikidot.com/spell:meteor-swarm",
+    level: 9,
+    school: "Evocation",
+    damageOrCondition: "Fire and Bludgeoning",
+    area: "Sphere",
+    range: "1 mile",
+    duration: "Instantaneous",
+  },
+  {
+    name: "Power Word: Kill",
+    link: "https://dnd5e.wikidot.com/spell:power-word-kill",
+    level: 9,
+    school: "Enchantment",
+    damageOrCondition: "None",
+    area: "Single target",
+    range: "60 feet",
+    duration: "Instantaneous",
+  },
+  {
+    name: "Prismatic Wall",
+    link: "https://dnd5e.wikidot.com/spell:prismatic-wall",
+    level: 9,
+    school: "Abjuration",
+    damageOrCondition: "Ward",
+    area: "Wall",
+    range: "60 feet",
+    duration: "10 minutes",
+  },
+  {
+    name: "Psychic Scream",
+    link: "https://dnd5e.wikidot.com/spell:psychic-scream",
+    level: 9,
+    school: "Enchantment",
+    damageOrCondition: "Psychic",
+    area: "Multi-target",
+    range: "90 feet",
+    duration: "Instantaneous",
+  },
+  {
+    name: "Shapechange",
+    link: "https://dnd5e.wikidot.com/spell:shapechange",
+    level: 9,
+    school: "Transmutation",
+    damageOrCondition: "Buff",
+    area: "Self",
+    range: "Self",
+    duration: "1 hour",
+  },
+  {
+    name: "Time Stop",
+    link: "https://dnd5e.wikidot.com/spell:time-stop",
+    level: 9,
+    school: "Transmutation",
+    damageOrCondition: "None",
+    area: "Self",
+    range: "Self",
+    duration: "Instantaneous",
+  },
+  {
+    name: "True Polymorph",
+    link: "https://dnd5e.wikidot.com/spell:true-polymorph",
+    level: 9,
+    school: "Transmutation",
+    damageOrCondition: "None",
+    area: "Single target",
+    range: "30 feet",
+    duration: "1 hour",
+  },
+  {
+    name: "Weird",
+    link: "https://dnd5e.wikidot.com/spell:weird",
+    level: 9,
+    school: "Illusion",
+    damageOrCondition: "Frightened",
+    area: "Sphere",
+    range: "120 feet",
+    duration: "1 minute",
+  },
+  {
+    name: "Wish",
+    link: "https://dnd5e.wikidot.com/spell:wish",
+    level: 9,
+    school: "Conjuration",
+    damageOrCondition: "None",
+    area: "Self",
+    range: "Self",
+    duration: "Instantaneous",
   },
 ] satisfies readonly Spell[];

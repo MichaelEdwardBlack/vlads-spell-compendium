@@ -1,4 +1,5 @@
 import type { Spell } from '../types';
+import { SpellDetailsLink } from './SpellDetailsLink';
 
 type SpellResultProps = {
   spell?: Spell;
@@ -35,9 +36,12 @@ export function SpellResult({ spell, isRevealing = false, possibleSpellCount }: 
         {spell?.name ?? (isRevealing ? 'Revealing...' : 'Unknown spell')}
       </h1>
       {spell ? (
-        <p className="spell-detail-reveal mt-3 text-sm text-[var(--text-body)]">
-          {formatSpellLevel(spell.level)} {spell.school.toLowerCase()} · {spell.damageOrCondition} · {spell.area}
-        </p>
+        <div className="spell-detail-reveal mt-3">
+          <p className="text-sm text-[var(--text-body)]">
+            {formatSpellLevel(spell.level)} {spell.school.toLowerCase()} · {spell.damageOrCondition} · {spell.area}
+          </p>
+          <SpellDetailsLink spell={spell} className="mt-3" />
+        </div>
       ) : isRevealing ? (
         <p className="mt-3 text-sm text-[var(--text-rune)]">The glyph is aligning into its true form.</p>
       ) : (

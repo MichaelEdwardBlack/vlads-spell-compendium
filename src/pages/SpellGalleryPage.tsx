@@ -1,4 +1,5 @@
 import { GlyphDiagram } from '../components/GlyphDiagram';
+import { SpellDetailsLink } from '../components/SpellDetailsLink';
 import { formatSpellLevel } from '../components/SpellResult';
 import { SPELLS } from '../data/spells';
 import { getRequiredEdgesForSpell } from '../utils/spellMatching';
@@ -39,7 +40,10 @@ export function SpellGalleryPage() {
               />
             </div>
             <div className="mt-4">
-              <h2 className="font-display text-xl font-semibold text-[var(--text-title)]">{spell.name}</h2>
+              <div className="flex items-start justify-between gap-3">
+                <h2 className="min-w-0 font-display text-xl font-semibold text-[var(--text-title)]">{spell.name}</h2>
+                <SpellDetailsLink spell={spell} className="shrink-0" />
+              </div>
               <p className="mt-1 text-sm text-[var(--text-body)]">
                 {formatSpellLevel(spell.level)} {spell.school.toLowerCase()}
               </p>

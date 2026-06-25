@@ -166,7 +166,8 @@ button {
 }
 
 .site-nav {
-  width: min(100%, 28rem);
+  width: 100%;
+  max-width: 28rem;
   background: color-mix(in srgb, var(--bg-panel) 88%, transparent);
   border-color: var(--border-soft);
 }

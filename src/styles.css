@@ -548,6 +548,9 @@ button {
 }
 
 .cast-history-sort {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.125rem;
   background: color-mix(in srgb, var(--bg-node) 54%, transparent);
   border-color: var(--border-soft);
 }

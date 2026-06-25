@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useId, useMemo, useRef, useState } from "react";
 import type { CSSProperties, MouseEvent } from "react";
 import { Award, BookOpen, ChevronDown, Grid3X3, Pause, Play, RotateCcw, Sparkles, Wand2 } from "lucide-react";
 import { GlyphBoard } from "./components/GlyphBoard";
@@ -709,6 +709,7 @@ function DiscoveredKeysPanel({
   emptyText = "Solve a spell to claim your first key.",
   sortMode,
   onSortModeChange,
+  isCollapsible = false,
 }: {
   keys: readonly DiscoveredKeyEntry[];
   canApply: boolean;
@@ -720,7 +721,10 @@ function DiscoveredKeysPanel({
   emptyText?: string;
   sortMode?: CollectorKeySortMode;
   onSortModeChange?: (mode: CollectorKeySortMode) => void;
+  isCollapsible?: boolean;
 }) {
+  const contentId = useId();
+  const [isExpanded, setIsExpanded] = useState(true);
   const visibleKeys = useMemo(() => {
     if (!sortMode) {
       return keys;
@@ -758,13 +762,32 @@ function DiscoveredKeysPanel({
 
   return (
     <section>
-      <div className="flex flex-wrap items-center justify-between gap-3">
-        <div>
+      <div className="flex flex-wrap items-center justify-between gap-x-3 gap-y-2">
+        <div className="min-w-0 flex-1">
           <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[var(--text-rune)]">{eyebrow}</p>
           <h2 className="mt-1 font-display text-xl font-semibold text-[var(--text-title)]">{title}</h2>
         </div>
+        {isCollapsible ? (
+          <button
+            type="button"
+            onClick={() => setIsExpanded((currentValue) => !currentValue)}
+            aria-expanded={isExpanded}
+            aria-controls={contentId}
+            className="arcane-icon-button shrink-0 rounded-md border p-2 transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
+          >
+            <ChevronDown
+              aria-hidden="true"
+              className={["transition", isExpanded ? "rotate-180" : ""].join(" ")}
+              size={18}
+            />
+            <span className="sr-only">{isExpanded ? `Collapse ${title}` : `Expand ${title}`}</span>
+          </button>
+        ) : null}
+      </div>
+
+      <div id={contentId} className={["mt-4 grid gap-3", isCollapsible && !isExpanded ? "hidden" : ""].join(" ")}>
         {sortMode && onSortModeChange ? (
-          <div className="cast-history-sort rounded-md border p-1" aria-label="Sort collector keys">
+          <div className="cast-history-sort justify-self-start rounded-md border p-1" aria-label="Sort collector keys">
             {[
               { id: "time" as const, label: "Time" },
               { id: "percent" as const, label: "Progress" },
@@ -783,9 +806,6 @@ function DiscoveredKeysPanel({
             ))}
           </div>
         ) : null}
-      </div>
-
-      <div className="mt-4 grid gap-3">
         {visibleKeys.length > 0 ? (
           visibleKeys.map((entry) => {
             const isApplied = isAppliedKey(entry);
@@ -887,6 +907,7 @@ function CastHistoryPanel({
   emptyText = "Cast a complete glyph and it will appear here.",
   sortMode,
   onSortModeChange,
+  isCollapsible = false,
 }: {
   history: readonly CastHistoryEntry[];
   eyebrow?: string;
@@ -894,7 +915,10 @@ function CastHistoryPanel({
   emptyText?: string;
   sortMode?: CastHistorySortMode;
   onSortModeChange?: (mode: CastHistorySortMode) => void;
+  isCollapsible?: boolean;
 }) {
+  const contentId = useId();
+  const [isExpanded, setIsExpanded] = useState(true);
   const visibleHistory = useMemo(() => {
     if (sortMode !== "level") {
       return history;
@@ -911,13 +935,38 @@ function CastHistoryPanel({
 
   return (
     <section>
-      <div className="flex flex-wrap items-center justify-between gap-3">
-        <div>
+      <div className="flex flex-wrap items-center justify-between gap-x-3 gap-y-2">
+        <div className="min-w-0 flex-1">
           <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[var(--text-rune)]">{eyebrow}</p>
           <h2 className="mt-1 font-display text-xl font-semibold text-[var(--text-title)]">{title}</h2>
         </div>
+        {isCollapsible ? (
+          <button
+            type="button"
+            onClick={() => setIsExpanded((currentValue) => !currentValue)}
+            aria-expanded={isExpanded}
+            aria-controls={contentId}
+            className="arcane-icon-button shrink-0 rounded-md border p-2 transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
+          >
+            <ChevronDown
+              aria-hidden="true"
+              className={["transition", isExpanded ? "rotate-180" : ""].join(" ")}
+              size={18}
+            />
+            <span className="sr-only">{isExpanded ? `Collapse ${title}` : `Expand ${title}`}</span>
+          </button>
+        ) : null}
+      </div>
+
+      <div
+        id={contentId}
+        className={[
+          "mt-4 grid max-h-none gap-3 lg:max-h-[calc(100vh-12rem)] lg:overflow-y-auto lg:pr-1",
+          isCollapsible && !isExpanded ? "hidden" : "",
+        ].join(" ")}
+      >
         {sortMode && onSortModeChange ? (
-          <div className="cast-history-sort rounded-md border p-1" aria-label="Sort collected spells">
+          <div className="cast-history-sort justify-self-start rounded-md border p-1" aria-label="Sort collected spells">
             {[
               { id: "time" as const, label: "Time" },
               { id: "level" as const, label: "Level A-Z" },
@@ -936,9 +985,6 @@ function CastHistoryPanel({
             ))}
           </div>
         ) : null}
-      </div>
-
-      <div className="mt-4 grid max-h-none gap-3 lg:max-h-[calc(100vh-12rem)] lg:overflow-y-auto lg:pr-1">
         {visibleHistory.length > 0 ? (
           visibleHistory.map((entry, index) => (
             <details key={entry.id} className="cast-history-card group rounded-md border" open={index === 0}>
@@ -1880,6 +1926,7 @@ function CastPage() {
             emptyText="Collect more spells to unlock your first key."
             sortMode={collectorKeySortMode}
             onSortModeChange={setCollectorKeySortMode}
+            isCollapsible
           />
           <CastHistoryPanel
             history={castHistory}
@@ -1888,6 +1935,7 @@ function CastPage() {
             emptyText="Cast a complete glyph to collect your first spell."
             sortMode={castHistorySortMode}
             onSortModeChange={setCastHistorySortMode}
+            isCollapsible
           />
         </aside>
       </div>

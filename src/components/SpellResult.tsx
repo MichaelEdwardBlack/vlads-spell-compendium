@@ -28,7 +28,7 @@ export function SpellResult({ spell, isRevealing = false, possibleSpellCount }: 
       <h1
         key={spell?.name ?? (isRevealing ? 'revealing' : 'unknown')}
         className={[
-          'mt-3 font-display text-4xl font-semibold text-[var(--text-title)] sm:text-5xl',
+          'spell-result-title mx-auto mt-3 max-w-full font-display text-4xl font-semibold text-[var(--text-title)] sm:text-5xl',
           spell ? 'spell-name-reveal' : '',
           isRevealing && !spell ? 'spell-name-charging' : '',
         ].join(' ')}

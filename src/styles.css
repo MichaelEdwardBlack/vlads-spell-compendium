@@ -190,6 +190,7 @@ button {
 .gallery-search,
 .attribute-section,
 .cast-history-panel,
+.collector-panel,
 .game-hud,
 .spell-reward-panel {
   background: var(--bg-panel);
@@ -303,6 +304,56 @@ button {
   color: var(--text-faint);
 }
 
+.hint-status-pill-complete {
+  background: color-mix(in srgb, var(--accent-gold) 24%, var(--bg-node));
+  border-color: color-mix(in srgb, var(--accent-gold) 76%, var(--border-soft));
+  color: var(--text-title);
+}
+
+.hint-status-pill-unlocked {
+  background: color-mix(in srgb, var(--text-rune) 16%, var(--bg-node));
+  border-color: color-mix(in srgb, var(--accent-gold) 48%, var(--border-soft));
+  color: var(--text-title);
+}
+
+.discovered-key-unlocked-new {
+  animation: key-unlocked-celebration 1300ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.discovered-key-complete {
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--accent-gold) 18%, transparent), transparent 46%),
+    color-mix(in srgb, var(--bg-node-hover) 18%, transparent);
+  border-color: color-mix(in srgb, var(--accent-gold) 62%, var(--border-soft));
+  box-shadow:
+    0 0 0 1px color-mix(in srgb, var(--accent-gold) 18%, transparent),
+    0 0 22px color-mix(in srgb, var(--accent-gold) 18%, transparent);
+  opacity: 1;
+}
+
+.discovered-key-complete-new {
+  position: relative;
+  overflow: hidden;
+  animation: key-complete-celebration 2200ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.discovered-key-complete-new::after {
+  content: "";
+  position: absolute;
+  inset: -35%;
+  pointer-events: none;
+  background:
+    radial-gradient(circle, color-mix(in srgb, var(--accent-gold) 54%, transparent), transparent 24%),
+    conic-gradient(
+      from 0deg,
+      transparent,
+      color-mix(in srgb, var(--accent-gold) 34%, transparent),
+      transparent 34%
+    );
+  opacity: 0;
+  animation: key-complete-sparkle 1800ms ease-out both;
+}
+
 .hint-choice-button:hover,
 .discovered-key-button:hover:not(:disabled),
 .round-control-button:hover:not(:disabled),
@@ -315,6 +366,18 @@ button {
   background: color-mix(in srgb, var(--bg-node) 62%, transparent);
   border-color: var(--border-soft);
   color: var(--text-title);
+}
+
+.spell-result-title,
+.spell-name-reveal,
+.spell-name-charging {
+  overflow-wrap: anywhere;
+  word-break: normal;
+  letter-spacing: 0;
+}
+
+.spell-result-title {
+  line-height: 1.08;
 }
 
 .round-control-button {
@@ -355,12 +418,143 @@ button {
   overflow-y: auto;
 }
 
+.collector-confetti {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.collector-confetti-piece {
+  position: absolute;
+  left: var(--confetti-x);
+  bottom: -1.5rem;
+  width: 0.42rem;
+  height: 1rem;
+  border-radius: 0.08rem;
+  background: var(--confetti-primary);
+  box-shadow: 0 0 12px color-mix(in srgb, var(--confetti-primary) 38%, transparent);
+  animation: collector-confetti-burst var(--confetti-duration) cubic-bezier(0.16, 0.88, 0.24, 1) var(--confetti-delay) both;
+}
+
+.collector-confetti-piece:nth-child(3n) {
+  width: 0.62rem;
+  height: 0.62rem;
+  border-radius: 999px;
+  background: var(--confetti-secondary);
+}
+
+.collector-confetti-piece:nth-child(4n) {
+  width: 0.74rem;
+  height: 0.38rem;
+  background: var(--confetti-tertiary);
+}
+
+.collector-confetti-piece:nth-child(5n) {
+  background: var(--confetti-flash);
+}
+
+.collector-confetti-unlock {
+  --confetti-primary: #e5edf7;
+  --confetti-secondary: #aab8c8;
+  --confetti-tertiary: #f7fbff;
+  --confetti-flash: #94a3b8;
+}
+
+.collector-confetti-mastery {
+  --confetti-primary: #facc15;
+  --confetti-secondary: #f8d878;
+  --confetti-tertiary: #fff7c2;
+  --confetti-flash: #f59e0b;
+}
+
+.collector-key-dialog {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  --celebration-primary: var(--accent-gold);
+  --celebration-secondary: #f8d878;
+  --celebration-deep: var(--accent-gold);
+  background:
+    radial-gradient(circle at 50% 0%, color-mix(in srgb, var(--celebration-primary) 26%, transparent), transparent 44%),
+    linear-gradient(135deg, color-mix(in srgb, var(--celebration-secondary) 14%, transparent), transparent 52%),
+    var(--bg-panel);
+  border-color: color-mix(in srgb, var(--celebration-primary) 68%, var(--border-soft));
+  box-shadow:
+    var(--shadow-glyph),
+    0 0 48px color-mix(in srgb, var(--celebration-primary) 28%, transparent);
+  animation: key-dialog-enter 540ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.collector-key-dialog-unlock {
+  --celebration-primary: #dbe4ef;
+  --celebration-secondary: #94a3b8;
+  --celebration-deep: #64748b;
+}
+
+.collector-key-dialog-mastery {
+  --celebration-primary: var(--accent-gold);
+  --celebration-secondary: #f8d878;
+  --celebration-deep: #b45309;
+}
+
+.collector-key-dialog-shine {
+  position: absolute;
+  inset: -22% auto -22% -52%;
+  width: 42%;
+  transform: rotate(18deg);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    color-mix(in srgb, var(--celebration-secondary) 44%, transparent),
+    transparent
+  );
+  opacity: 0;
+  pointer-events: none;
+  animation: collector-dialog-shine 1550ms ease-out 180ms both;
+}
+
+.collector-key-dialog-emblem {
+  position: relative;
+  background:
+    radial-gradient(circle at 34% 28%, color-mix(in srgb, #fff 54%, transparent), transparent 28%),
+    linear-gradient(145deg, color-mix(in srgb, var(--celebration-primary) 72%, var(--bg-node)), color-mix(in srgb, var(--celebration-deep) 44%, var(--bg-node)));
+  border-color: color-mix(in srgb, var(--celebration-primary) 82%, var(--border-soft));
+  color: var(--text-title);
+  box-shadow:
+    0 0 0 5px color-mix(in srgb, var(--celebration-primary) 14%, transparent),
+    0 0 34px color-mix(in srgb, var(--celebration-primary) 46%, transparent);
+  animation: collector-emblem-pop 760ms cubic-bezier(0.16, 1, 0.3, 1) 80ms both;
+}
+
+.collector-key-dialog-mastery .collector-key-dialog-emblem {
+  box-shadow:
+    0 0 0 6px color-mix(in srgb, var(--celebration-primary) 18%, transparent),
+    0 0 46px color-mix(in srgb, var(--celebration-primary) 58%, transparent);
+}
+
+.collector-key-dialog-eyebrow {
+  color: color-mix(in srgb, var(--celebration-deep) 70%, var(--text-title));
+}
+
 .cast-history-card summary {
   outline-color: var(--accent-gold);
 }
 
 .cast-history-card summary:hover {
   background: color-mix(in srgb, var(--bg-node-hover) 20%, transparent);
+}
+
+.cast-history-sort {
+  background: color-mix(in srgb, var(--bg-node) 54%, transparent);
+  border-color: var(--border-soft);
+}
+
+.cast-history-sort-active {
+  background: color-mix(in srgb, var(--bg-node-hover) 82%, transparent);
+  color: var(--text-title);
+  box-shadow: 0 0 12px color-mix(in srgb, var(--text-rune) 12%, transparent);
 }
 
 .cast-history-details {
@@ -549,6 +743,147 @@ button {
   }
 }
 
+@keyframes key-unlocked-celebration {
+  0% {
+    transform: translateY(2px) scale(0.985);
+    border-color: var(--border-soft);
+    box-shadow: 0 0 0 color-mix(in srgb, var(--text-rune) 0%, transparent);
+  }
+
+  40% {
+    transform: translateY(-1px) scale(1.018);
+    border-color: color-mix(in srgb, var(--accent-gold) 54%, var(--border-soft));
+    box-shadow:
+      0 0 0 3px color-mix(in srgb, var(--accent-gold) 20%, transparent),
+      0 0 26px color-mix(in srgb, var(--text-rune) 26%, transparent);
+  }
+
+  100% {
+    transform: translateY(0) scale(1);
+    border-color: var(--border-soft);
+    box-shadow: 0 0 0 color-mix(in srgb, var(--text-rune) 0%, transparent);
+  }
+}
+
+@keyframes key-complete-celebration {
+  0% {
+    transform: translateY(4px) scale(0.96);
+    box-shadow:
+      0 0 0 0 color-mix(in srgb, var(--accent-gold) 0%, transparent),
+      0 0 0 color-mix(in srgb, var(--accent-gold) 0%, transparent);
+  }
+
+  34% {
+    transform: translateY(-2px) scale(1.045);
+    box-shadow:
+      0 0 0 6px color-mix(in srgb, var(--accent-gold) 32%, transparent),
+      0 0 46px color-mix(in srgb, var(--accent-gold) 54%, transparent);
+  }
+
+  62% {
+    transform: translateY(0) scale(1.012);
+    box-shadow:
+      0 0 0 2px color-mix(in srgb, var(--accent-gold) 24%, transparent),
+      0 0 34px color-mix(in srgb, var(--accent-gold) 36%, transparent);
+  }
+
+  100% {
+    transform: translateY(0) scale(1);
+    box-shadow:
+      0 0 0 1px color-mix(in srgb, var(--accent-gold) 18%, transparent),
+      0 0 22px color-mix(in srgb, var(--accent-gold) 18%, transparent);
+  }
+}
+
+@keyframes key-complete-sparkle {
+  0% {
+    opacity: 0;
+    transform: rotate(0deg) scale(0.72);
+  }
+
+  20% {
+    opacity: 0.7;
+  }
+
+  74% {
+    opacity: 0.28;
+    transform: rotate(210deg) scale(1.08);
+  }
+
+  100% {
+    opacity: 0;
+    transform: rotate(260deg) scale(1.18);
+  }
+}
+
+@keyframes collector-confetti-burst {
+  0% {
+    opacity: 0;
+    transform: translate3d(-50%, 1rem, 0) rotate(var(--confetti-rotate)) scale(0.72);
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  58% {
+    opacity: 1;
+    transform: translate3d(calc(-50% + var(--confetti-drift)), var(--confetti-peak), 0)
+      rotate(calc(var(--confetti-rotate) + 260deg)) scale(1);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate3d(calc(-50% + var(--confetti-drift-end)), -16vh, 0)
+      rotate(calc(var(--confetti-rotate) + 560deg)) scale(0.88);
+  }
+}
+
+@keyframes collector-dialog-shine {
+  0% {
+    opacity: 0;
+    transform: translateX(0) rotate(18deg);
+  }
+
+  18% {
+    opacity: 0.82;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateX(420%) rotate(18deg);
+  }
+}
+
+@keyframes collector-emblem-pop {
+  0% {
+    opacity: 0;
+    transform: translateY(8px) scale(0.66) rotate(-10deg);
+  }
+
+  52% {
+    opacity: 1;
+    transform: translateY(-3px) scale(1.12) rotate(3deg);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1) rotate(0deg);
+  }
+}
+
+@keyframes key-dialog-enter {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.96);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
 @keyframes countdown-pulse {
   from {
     opacity: 0;
@@ -596,6 +931,13 @@ button {
   .spell-name-charging,
   .spell-name-reveal,
   .spell-detail-reveal,
+  .discovered-key-unlocked-new,
+  .discovered-key-complete-new,
+  .discovered-key-complete-new::after,
+  .collector-key-dialog,
+  .collector-confetti-piece,
+  .collector-key-dialog-shine,
+  .collector-key-dialog-emblem,
   .resume-countdown-number,
   .game-stat-time-warning,
   .game-stat-time-critical {
